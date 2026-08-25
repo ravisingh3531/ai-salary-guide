@@ -134,7 +134,7 @@ export const deepDives: DeepDive[] = [
   {
     rank: 3,
     thesis:
-      "A university-credentialed path (IIIT-Bangalore) that clears HR filters and internal promotion panels — valuable when the blocker is documentation rather than capability.",
+      "A structured, credential-backed path that clears HR filters and internal promotion panels — valuable when the blocker is documentation rather than capability.",
     salary: [
       { role: "ML Engineer (post-PGP, with experience)", band: "₹12–24 LPA", note: "[verify current]" },
       { role: "Data Scientist", band: "₹10–20 LPA", note: "[verify current]" },

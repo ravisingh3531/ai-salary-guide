@@ -133,7 +133,7 @@ export const reviews: Review[] = [
     name: "DataCamp — Data Scientist & ML Career Track",
     positioning: "University-credentialed program on an academic cadence",
     overview:
-      "DataCamp's proposition is institutional legitimacy. The IIIT-Bangalore association gives the certificate weight in HR screens, appraisal documentation and internal promotion cases — which is a real pay mechanism, just not the same one as frontier skills.",
+      "DataCamp's proposition is institutional legitimacy. Its structured career-track certificates carry weight in HR screens, appraisal documentation and internal promotion cases — which is a real pay mechanism, just not the same one as frontier skills.",
     curriculum:
       "Broad and well-structured across statistics, classical ML, deep learning and NLP, with GenAI modules that refresh more slowly than specialist providers. Deployment and MLOps are covered at a moderate level.",
     depthVerdict:
