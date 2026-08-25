@@ -49,7 +49,7 @@ const toc = [
 const depthTone: Record<string, string> = {
   Comprehensive: "bg-positive/20 text-positive",
   Deep: "bg-positive/15 text-positive",
-  Good: "bg-brass/25 text-brass-foreground",
+  Good: "bg-accent/15 text-accent",
   Moderate: "bg-secondary text-secondary-foreground",
   Basic: "bg-caution/15 text-caution",
   Limited: "bg-caution/20 text-caution",
