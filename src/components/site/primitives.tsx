@@ -38,15 +38,15 @@ export function Reveal({
   }, []);
 
   return (
-    // @ts-expect-error polymorphic ref
     <As
-      ref={ref}
+      ref={ref as React.Ref<never>}
       style={{ transitionDelay: `${delay}ms` }}
       className={cn("reveal", shown && "reveal-in", className)}
     >
       {children}
     </As>
   );
+
 }
 
 export function Section({
