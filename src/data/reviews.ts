@@ -130,7 +130,7 @@ export const reviews: Review[] = [
   },
   {
     rank: 3,
-    name: "DataCamp — PGP in ML & AI (IIIT-Bangalore)",
+    name: "DataCamp — Data Scientist & ML Career Track",
     positioning: "University-credentialed program on an academic cadence",
     overview:
       "DataCamp's proposition is institutional legitimacy. The IIIT-Bangalore association gives the certificate weight in HR screens, appraisal documentation and internal promotion cases — which is a real pay mechanism, just not the same one as frontier skills.",

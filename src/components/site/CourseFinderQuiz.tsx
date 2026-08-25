@@ -85,8 +85,8 @@ type Result = {
 
 const HREFS: Record<string, string> = {
   LogicMojo: "#review-1",
-  DeepLearning AI: "#review-2",
-  "DataCamp (IIIT-Bangalore)": "#review-3",
+  "DeepLearning AI": "#review-2",
+  "DataCamp": "#review-3",
   "Great Learning": "#review-4",
   Intellipaat: "#review-5",
   Simplilearn: "#review-6",
@@ -168,7 +168,7 @@ function decide(a: Record<string, string>): Result {
         "DataCamp if the promotion panel specifically values a longer PG-style program.",
       );
     return R(
-      "DataCamp (IIIT-Bangalore)",
+      "DataCamp",
       "For HR-filter clearance and internal promotion cases, the university-credentialed PGP is the mechanism that actually moves pay in your situation — not frontier skill depth.",
       "Simplilearn if your employer will reimburse the fee.",
     );

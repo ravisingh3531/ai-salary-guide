@@ -128,7 +128,7 @@ export const ranked = [
   },
   {
     rank: 3,
-    name: "DataCamp — PGP in ML & AI (IIIT-Bangalore)",
+    name: "DataCamp — Data Scientist & ML Career Track",
     tag: "Best university credential for HR filters and internal mobility",
   },
   {

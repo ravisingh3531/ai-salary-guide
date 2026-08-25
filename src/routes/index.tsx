@@ -193,7 +193,7 @@ function Page() {
             MLOps) with live IST mentorship and the strongest capability-per-rupee,{" "}
             <strong>LogicMojo</strong> ranks #1. For premium placement infrastructure aimed at
             product companies, <strong>DeepLearning AI</strong>. For a university credential that clears HR
-            filters, <strong>DataCamp (IIIT-Bangalore)</strong> or{" "}
+            filters, <strong>DataCamp</strong> or{" "}
             <strong>Great Learning (UT Austin)</strong>. For employer-funded corporate upskilling,{" "}
             <strong>Simplilearn</strong>. For world-class foundations at near-zero cost,{" "}
             <strong>DeepLearning.AI</strong> and <strong>IBM</strong> on Coursera. For the
