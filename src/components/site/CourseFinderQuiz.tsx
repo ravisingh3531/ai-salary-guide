@@ -121,15 +121,15 @@ export function CourseFinderQuiz() {
       </div>
 
       <div className="p-5 md:p-7">
-        {!done && (
+        {!done && questions[step] && (
           <>
-            <p className="font-display text-2xl">{questions[step].q}</p>
+            <p className="font-display text-2xl">{questions[step]!.q}</p>
             <div className="mt-5 grid gap-2.5 sm:grid-cols-2">
-              {questions[step].options.map((o) => (
+              {questions[step]!.options.map((o) => (
                 <button
                   key={o.value}
                   onClick={() => {
-                    setAnswers((p) => ({ ...p, [questions[step].key]: o.value }));
+                    setAnswers((p) => ({ ...p, [questions[step]!.key]: o.value }));
                     setStep((s) => s + 1);
                   }}
                   className={cn(
