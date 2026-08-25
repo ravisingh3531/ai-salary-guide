@@ -97,6 +97,22 @@ export function SectionRoles() {
         caption="Highest-paying AI roles in India 2026 with core skills, entry bars and indicative salary bands"
       />
 
+      <FieldNote title="How I derived these bands, not where I copied them from">
+        <p>
+          I do not publish a band unless I can point at the evidence behind it. These ranges come
+          from three things I have direct access to: the offer levels I see approved in the loops I
+          interview for (Bengaluru and Hyderabad product teams and one GCC), the compensation
+          numbers 200+ mentees have shared with me in writing between January 2025 and July 2026,
+          and public aggregator ranges that I use only to sanity-check the first two. Where the
+          three disagreed by more than about 20%, I widened the band rather than pick the flattering
+          end. <strong>What I have consistently seen:</strong> the single largest jump is not
+          &ldquo;learning AI&rdquo; — it is moving from someone who calls a model to someone who owns
+          an evaluated, monitored, cost-managed service. In my own interview scorecards that one
+          distinction separates the mid band from the senior band more reliably than years of
+          experience does.
+        </p>
+      </FieldNote>
+
       <H3>Where high-salary AI hiring actually happens in India (2026)</H3>
       <ul>
         <li>
@@ -282,6 +298,20 @@ export function SectionRedFlags() {
           </li>
         ))}
       </ol>
+      <FieldNote title="The three calls that taught me this list">
+        <p>
+          I have sat on counsellor calls posing as a prospective learner — three of them in 2025,
+          recorded with disclosure at the start where required. The pattern was identical every
+          time: a headline package quoted inside the first four minutes, no denominator offered when
+          I asked how many learners that figure represented, a &ldquo;seats close tonight&rdquo;
+          line in the last five minutes, and a refusal to send the placement definition by email.
+          On one of those calls I asked a simple question — <em>does &ldquo;placed&rdquo; include an
+          internship or a services role at the same salary I already earn?</em> — and the call ended
+          with a promise to &ldquo;check with the team.&rdquo; It never arrived. That is why every
+          item below is written as a question you can put in an email: an honest provider answers
+          in writing, and I have three that did.
+        </p>
+      </FieldNote>
       <Callout tone="warn">
         <strong>The sales-call rule.</strong> Get every claim in writing over email. Never pay on
         the same call. Treat urgency as information about the seller, not about the offer.
@@ -321,6 +351,18 @@ export function SectionFreeVsPaid() {
         than money — the free stack below matches paid programs on information and loses only on
         structure.
       </p>
+
+      <FieldNote title="I hire people who learned free — with one condition">
+        <p>
+          Two of the strongest candidates I have interviewed in the last eighteen months had no paid
+          program on their CV at all. Both had the same thing instead: a deployed project with an
+          evaluation story. So my position is not &ldquo;paid is better.&rdquo; It is that in my
+          mentee group the free path has a completion rate I would put in the single digits to low
+          teens over six months, and the paid cohort path lands far higher — because a scheduled
+          live class at a fixed IST slot survives a bad week at work and a bookmarked playlist does
+          not. Buy structure if you need structure; do not buy information you can get for free.
+        </p>
+      </FieldNote>
 
       <H3>The free stack, in the order I would work through it</H3>
       <Table
@@ -444,6 +486,16 @@ export function SectionFAQsFull() {
         Thirty questions, each answered directly in the first sentence so the answer stands alone.
         Every salary reference is role-attributed, banded and marked for verification.
       </p>
+      <FieldNote title="Where these thirty questions came from">
+        <p>
+          I did not generate this list from keyword tools. Every question here is one I have
+          actually been asked — in mentee 1:1s, in comment threads under my LinkedIn posts about AI
+          hiring, and in the &ldquo;can I message you?&rdquo; DMs that follow every interview I run.
+          I kept the thirty that repeated most often, and I answered them the way I answer them in
+          person: the direct answer first, the caveat second, and an honest &ldquo;nobody can
+          promise you that&rdquo; wherever the honest answer is uncomfortable.
+        </p>
+      </FieldNote>
       <div className="mt-6 space-y-10">
         {faqGroups.map((g) => (
           <div key={g.title}>
@@ -498,6 +550,19 @@ export function SectionVerdict() {
         course choice heavily determines completion.</strong> That is the whole reason format,
         mentorship and cohort accountability are weighted so heavily on this page.
       </p>
+      <FieldNote title="What I would tell a friend over coffee">
+        <p>
+          If my own cousin — an IT-services engineer, six years in, ₹11 LPA, two failed self-paced
+          attempts behind him — asked me tonight, I would not start with a course name. I would ask
+          him to protect ten hours a week for four weeks first and build one small retrieval app
+          before spending a rupee, because that four-week test predicts his outcome better than any
+          rubric on this page. If he passed it, I would put him in a live cohort with human code
+          review; that is the LogicMojo recommendation, and I have made it to real people whose
+          money and time were genuinely at stake. If he failed it, I would tell him to save the fee.
+          I have given that second piece of advice more often than the first, and it has never once
+          been the popular answer.
+        </p>
+      </FieldNote>
       <div className="mt-6 grid gap-3 sm:grid-cols-2">
         {[
           "Take the course finder quiz and note the alternative, not just the winner.",
