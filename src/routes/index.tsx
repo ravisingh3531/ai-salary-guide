@@ -3,6 +3,18 @@ import { Button } from "@/components/ui/button";
 import { Callout, H3, NoteCard, Pill, Reveal, Section, StatCard, TableFrame } from "@/components/site/primitives";
 import { CourseFinderQuiz } from "@/components/site/CourseFinderQuiz";
 import {
+  SectionInternalExternal,
+  SectionJobSearch,
+  SectionMistakesMyths,
+  SectionResume,
+} from "@/components/site/CareerTransition";
+import { SectionPrograms } from "@/components/site/ProgramsHonest";
+import {
+  SectionAuthorTrust,
+  SectionFAQs,
+  SectionPathQuiz,
+} from "@/components/site/TrustBlocks";
+import {
   capabilityLadder,
   COURSE_NAMES,
   curriculumRows,
