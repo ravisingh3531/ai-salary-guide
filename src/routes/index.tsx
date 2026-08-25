@@ -428,17 +428,22 @@ function Page() {
           column — the gap between the #1 course and the #1 course <em>for you</em> is the most
           expensive gap on this page.
         </p>
-        <ol className="my-6 space-y-2.5">
-          {ranked.map((c) => (
-            <li key={c.rank} className="flex gap-4 border-b border-border pb-2.5">
-              <span className="font-display text-2xl leading-none text-brass">{c.rank}</span>
-              <div>
-                <p className="font-semibold">{c.name}</p>
-                <p className="text-sm text-muted-foreground">{c.tag}</p>
+        <ol className="my-6 grid gap-3 sm:grid-cols-2">
+          {ranked.map((c, i) => (
+            <Reveal as="li" key={c.rank} delay={i * 45}>
+              <div className="card-lift flex h-full items-start gap-4 rounded-2xl border border-border bg-card p-4 shadow-card">
+                <span className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-[image:var(--gradient-blue)] font-display text-xl text-primary-foreground">
+                  {c.rank}
+                </span>
+                <div>
+                  <p className="font-semibold leading-tight">{c.name}</p>
+                  <p className="mt-1 text-sm text-muted-foreground">{c.tag}</p>
+                </div>
               </div>
-            </li>
+            </Reveal>
           ))}
         </ol>
+
 
         <TableFrame
           label="Table 1"
