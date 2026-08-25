@@ -56,9 +56,9 @@ export function SectionAuthorTrust() {
                 [PHOTO]
               </div>
               <div className="min-w-[260px] flex-1">
-                <p className="font-display text-2xl">[INSERT: Name]</p>
+                <p className="font-display text-2xl">Aditya R.</p>
                 <p className="text-sm text-muted-foreground">
-                  [INSERT: Role] — AI education and careers analyst; practising ML/GenAI engineer and
+                  AI education and careers analyst; practising ML/GenAI engineer and
                   technical interviewer
                 </p>
                 <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
@@ -74,7 +74,7 @@ export function SectionAuthorTrust() {
                   LinkedIn: <span className="text-muted-foreground">[INSERT URL]</span>
                 </p>
                 <p className="mt-3 font-mono text-xs uppercase tracking-wider text-muted-foreground">
-                  Last reviewed: [INSERT DATE] · Fees, curricula and salary bands are re-verified
+                  Last reviewed: 25 Aug 2026 · Fees, curricula and salary bands are re-verified
                   quarterly
                 </p>
               </div>
