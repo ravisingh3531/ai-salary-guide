@@ -56,6 +56,14 @@ const toc = [
   ["quiz", "AI Course Finder Quiz — find your fit"],
   ["reviews", "In-depth reviews of all 10 courses"],
   ["faq", "Frequently asked questions"],
+  ["positioning", "Résumé, LinkedIn and the career-switch narrative"],
+  ["internal-external", "Internal move vs external switch"],
+  ["job-search", "Job search and the 2026 AI interview loop"],
+  ["mistakes-myths", "Common mistakes and AI-career myths"],
+  ["programs", "10 structured programs, compared honestly"],
+  ["path-quiz", "Which path fits you? 6-question quiz"],
+  ["transition-faqs", "20 career-transition FAQs"],
+  ["author", "Author, reviewers and trust signals"],
 ];
 
 const depthTone: Record<string, string> = {
