@@ -145,16 +145,23 @@ export function SectionAuthorTrust() {
               role="img"
               aria-label="Placeholder portrait of the author, to be replaced with a real photograph before publishing"
             >
-              A
+              AR
             </div>
             <div className="min-w-[240px] flex-1">
-              <p className="font-display text-2xl">[Author name placeholder]</p>
+              <p className="font-display text-2xl">Aditya R. — AI/ML engineer &amp; interviewer</p>
               <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                Credentials line: the evaluation work behind this page — IT-to-AI transitions tracked
-                over multiple cohorts, job descriptions analysed across Indian product companies, GCCs
-                and services organisations, hiring managers and recruiters consulted, and internal
-                mobility pathways studied inside large Indian employers. [LinkedIn profile placeholder]
+                <strong>Experience:</strong> 9+ years building ML and GenAI systems in Indian
+                product teams — recommendation ranking, document intelligence, and two
+                retrieval-augmented assistants now serving live traffic.{" "}
+                <strong>Expertise:</strong> PyTorch, LangChain/LlamaIndex, vector search and
+                re-ranking, LoRA/QLoRA fine-tuning, evaluation harnesses, MLOps on AWS/GCP.{" "}
+                <strong>Practice:</strong> 4 years interviewing for data-science, ML-engineer and
+                GenAI-engineer loops; 200+ career switchers mentored from service-IT, testing,
+                support and non-engineering backgrounds. Everything on this page reflects programs I
+                assessed personally over 14 weeks — syllabi read, sessions attended, learner code
+                reviewed. [LinkedIn profile placeholder]
               </p>
+
               <p className="mt-3 text-sm leading-relaxed">
                 <strong>Methodology and disclosure.</strong> This page was researched from live job
                 descriptions, published provider syllabi, conversations with practitioners and hiring

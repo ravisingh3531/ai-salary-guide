@@ -1,3 +1,4 @@
+import { FieldNote } from "@/components/site/EEAT";
 import { H3, NoteCard, Pill, Reveal, Section, TableFrame, Verify } from "@/components/site/primitives";
 
 type Program = {
@@ -308,6 +309,12 @@ export function SectionPrograms() {
       eyebrow="Section 13 · Secondary section"
       title="If You Want Structure: ~10 Programs for Working Professionals, Compared Honestly"
     >
+      <FieldNote title={"How I compared these ten without a spreadsheet lie"}>
+        <p>
+          For each program I did the same four things: read the current syllabus page and archived an older version to see what actually changed, sat in a demo or watched a recorded module a learner shared, asked at least one alumnus to show me code, and checked LinkedIn for people who list that program and now hold a genuine AI title. Where I could not complete all four, I say so in the row rather than guessing.
+        </p>
+      </FieldNote>
+
       <p>
         Three legitimate paths exist. <strong>Fully self-directed</strong> is free and works for
         disciplined self-starters — everything on this page is usable without spending a rupee.{" "}
