@@ -1003,7 +1003,10 @@ function Page() {
         </div>
       </Section>
 
+      <SectionAuthorTrust />
+
       <footer className="mt-12 rule-top text-sm leading-relaxed text-muted-foreground">
+
         <p>
           <strong className="text-foreground">Salary and claims note.</strong> Every salary figure on
           this page is an indicative, role-based range attributed to roles and markets, never to a
