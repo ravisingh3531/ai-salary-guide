@@ -1178,6 +1178,7 @@ function Page() {
       <SectionMistakesMyths />
       <SectionPrograms />
       <SectionPathQuiz />
+      <SectionSalaryFAQs />
       <SectionFAQs />
 
       {/* FAQ */}
