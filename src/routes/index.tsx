@@ -125,18 +125,28 @@ function Page() {
   return (
     <main className="mx-auto max-w-4xl px-5 pb-24 md:px-8">
       {/* SECTION 1 */}
-      <header className="pt-14 md:pt-20">
-        <div className="flex flex-wrap items-center gap-2">
+      <header className="relative pt-14 md:pt-20">
+        <div
+          aria-hidden
+          className="float-slow pointer-events-none absolute -right-24 -top-6 -z-10 hidden size-72 rounded-full bg-accent/20 blur-3xl md:block"
+        />
+        <div className="rise-in flex flex-wrap items-center gap-2">
           <Pill tone="ink">2026 edition</Pill>
           <Pill tone="brass">Commercial comparison</Pill>
           <Pill>Last reviewed: quarterly cadence</Pill>
         </div>
-        <h1 className="mt-5 text-[2.6rem] leading-[1.05] md:text-6xl">
+        <h1 className="rise-in mt-5 text-[2.6rem] leading-[1.05] text-gradient md:text-6xl">
           Top 10 Best AI Courses with High Salary (2026) — Fees, Curriculum, Placement Support,
           Salary Potential and ROI Compared
         </h1>
 
-        <div className="mt-8 rounded-xl border-2 border-ink bg-paper p-6 shadow-card">
+        <div className="rise-in mt-8 grid gap-4 sm:grid-cols-3">
+          <StatCard value="150+" label="Courses screened" note="Filtered down to 10 finalists" delay={0} />
+          <StatCard value="18" label="Curriculum dimensions" note="Scored per provider, GenAI to MLOps" delay={90} />
+          <StatCard value="₹0–₹3L" label="Fee spread compared" note="Capability-per-rupee, not sticker price" delay={180} />
+        </div>
+
+        <div className="glass-card card-lift rise-in mt-6 rounded-2xl p-6 md:p-7">
           <p className="eyebrow mb-2">Quick answer</p>
           <p className="leading-relaxed">
             The best AI course with high salary potential in 2026 depends on the role you're
@@ -154,13 +164,14 @@ function Page() {
           </p>
         </div>
 
-        <p className="mt-4 border-l-4 border-l-brass bg-secondary/60 px-4 py-3 text-sm leading-relaxed">
+        <p className="mt-4 rounded-r-xl border-l-4 border-l-accent bg-secondary/70 px-4 py-3 text-sm leading-relaxed">
           <strong>Disclosure:</strong> This page is published by LogicMojo, whose AI &amp; ML course
           is reviewed here and ranks #1 under the methodology stated below. Every course on this
           list — ours included — is assessed with verified claims, real limitations and the same
           scoring rubric.
         </p>
       </header>
+
 
       <div className="prose-body mt-10">
         <p>
