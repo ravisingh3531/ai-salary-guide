@@ -102,10 +102,10 @@ export function CourseFinderQuiz() {
   const result = done ? recommend(answers) : null;
 
   return (
-    <div className="my-8 overflow-hidden rounded-xl border border-border bg-card shadow-lift">
-      <div className="flex items-center justify-between gap-4 bg-ink px-5 py-4 text-ink-foreground">
+    <div className="my-8 overflow-hidden rounded-3xl border border-accent/20 bg-card shadow-lift">
+      <div className="flex items-center justify-between gap-4 bg-[image:var(--gradient-blue)] px-5 py-4 text-primary-foreground">
         <div>
-          <p className="eyebrow !text-brass">Interactive tool</p>
+          <p className="eyebrow !text-primary-foreground/80">Interactive tool</p>
           <p className="font-display text-xl">AI Course Finder Quiz</p>
         </div>
         <span className="font-mono text-xs opacity-70">
@@ -115,7 +115,7 @@ export function CourseFinderQuiz() {
 
       <div className="h-1 w-full bg-secondary">
         <div
-          className="h-full bg-brass transition-all duration-500"
+          className="h-full bg-[image:var(--gradient-blue)] transition-all duration-500"
           style={{ width: `${(Math.min(step, questions.length) / questions.length) * 100}%` }}
         />
       </div>
@@ -133,8 +133,8 @@ export function CourseFinderQuiz() {
                     setStep((s) => s + 1);
                   }}
                   className={cn(
-                    "rounded-lg border border-border bg-background px-4 py-3.5 text-left text-sm transition-all",
-                    "hover:-translate-y-0.5 hover:border-brass hover:shadow-card focus-visible:outline-2 focus-visible:outline-ring",
+                    "rounded-xl border border-border bg-background px-4 py-3.5 text-left text-sm transition-all",
+                    "hover:-translate-y-0.5 hover:border-accent hover:bg-accent/[0.06] hover:shadow-card focus-visible:outline-2 focus-visible:outline-ring",
                   )}
                 >
                   {o.label}
@@ -160,7 +160,7 @@ export function CourseFinderQuiz() {
             <p className="mt-3 leading-relaxed text-muted-foreground">
               <strong className="text-foreground">Do this next:</strong> {result.next}
             </p>
-            <p className="mt-5 border-l-4 border-l-brass bg-paper px-4 py-3 text-sm italic">
+            <p className="mt-5 rounded-r-xl border-l-4 border-l-accent bg-paper px-4 py-3 text-sm italic">
               This is a fit suggestion based on budget, time and goal — not a salary projection. No course
               on this page can promise a package; roles and markets set pay, and outcomes concentrate
               among learners who finish and build a portfolio.
