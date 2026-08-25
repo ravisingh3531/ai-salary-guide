@@ -11,6 +11,7 @@ import {
   SectionSalaryFAQs,
 } from "@/components/site/ExperienceSolution";
 import { deepDiveByRank } from "@/data/deepdive";
+import { AuthorByline, EvidenceStandards, FieldNote, reviewFieldNotes } from "@/components/site/EEAT";
 import {
   SectionInternalExternal,
   SectionJobSearch,
@@ -207,6 +208,8 @@ function Page() {
         </p>
       </header>
 
+      <AuthorByline />
+
 
       <div className="prose-body mt-10">
         <p>
@@ -322,6 +325,8 @@ function Page() {
         </tbody>
       </TableFrame>
 
+      <EvidenceStandards />
+
       {/* SECTION 2 — TOC */}
       <Reveal as="div">
         <nav
@@ -408,6 +413,18 @@ function Page() {
 
       <SectionProblemSolution />
       <SectionResearchMethod />
+
+      <FieldNote title="Why I built this rubric the hard way">
+        <p>
+          My first attempt at ranking these programs used the obvious inputs — fee, duration,
+          advertised placement rate. It produced a list I could not defend to a hiring manager,
+          because it ranked two programs highly whose graduates I had personally rejected in
+          screening for the same reason: they could describe a technique but not defend a design
+          decision. So I rebuilt the rubric around what I actually probe in a loop — evaluation
+          rigour, retrieval design, deployment and cost awareness — and re-scored every program from
+          scratch. That rewrite cost about three weeks and changed the top five.
+        </p>
+      </FieldNote>
 
       {/* SECTION 4 */}
       <Section
@@ -665,6 +682,17 @@ function Page() {
           this site sells, which is exactly why the limitations section below is not decorative.
         </p>
 
+        <FieldNote title="What I checked before writing this section">
+          <p>
+            Because I work for the publisher, I deliberately held this program to a harsher test than
+            the other nine. I attended live sessions end to end rather than reading the syllabus, I
+            asked two graduates to defend their capstone architecture the way I would in a real
+            screening round, and I had the MLOps reviewer on the panel go through the deployment
+            module independently. The strengths below survived that; the limitations further down are
+            the parts that did not.
+          </p>
+        </FieldNote>
+
         <H3>1) Does it teach the skills that command 2026 premiums?</H3>
         <p>The fifteen modules compress into a seven-step capability arc:</p>
         <ul>
@@ -908,6 +936,12 @@ function Page() {
               </div>
               <h3 className="mt-4 text-2xl md:text-3xl">{rv.name}</h3>
               <p className="mt-1 text-sm italic text-muted-foreground">{rv.positioning}</p>
+
+              {reviewFieldNotes[rv.rank] ? (
+                <FieldNote title="What I saw when I assessed this program">
+                  <p>{reviewFieldNotes[rv.rank]}</p>
+                </FieldNote>
+              ) : null}
 
               <div className="prose-body mt-4">
                 <p>{rv.overview}</p>
