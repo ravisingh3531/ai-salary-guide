@@ -93,7 +93,7 @@ export function Pill({ children, tone = "muted" }: { children: ReactNode; tone?:
     <span
       className={cn(
         "inline-flex items-center rounded-full px-2.5 py-0.5 font-mono text-[0.65rem] uppercase tracking-wider",
-        tones[tone] ?? tones.muted,
+        tones[tone] ?? tones['muted'],
       )}
     >
       {children}
