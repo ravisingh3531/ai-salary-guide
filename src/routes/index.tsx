@@ -2,28 +2,22 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
 import { Callout, H3, NoteCard, Pill, Reveal, Section, StatCard, TableFrame } from "@/components/site/primitives";
 import { CourseFinderQuiz } from "@/components/site/CourseFinderQuiz";
-import { SalaryQuiz } from "@/components/site/SalaryQuiz";
 import {
-  SectionBeyondMarketing,
-  SectionHowToChoose,
   SectionProblemSolution,
   SectionResearchMethod,
-  SectionSalaryFAQs,
 } from "@/components/site/ExperienceSolution";
+import {
+  SectionFAQsFull,
+  SectionFreeVsPaid,
+  SectionRedFlags,
+  SectionROI,
+  SectionRoles,
+  SectionVerdict,
+  faqGroups,
+} from "@/components/site/Sections9to14";
 import { deepDiveByRank } from "@/data/deepdive";
 import { AuthorByline, EvidenceStandards, FieldNote, reviewFieldNotes } from "@/components/site/EEAT";
-import {
-  SectionInternalExternal,
-  SectionJobSearch,
-  SectionMistakesMyths,
-  SectionResume,
-} from "@/components/site/CareerTransition";
-import { SectionPrograms } from "@/components/site/ProgramsHonest";
-import {
-  SectionAuthorTrust,
-  SectionFAQs,
-  SectionPathQuiz,
-} from "@/components/site/TrustBlocks";
+import { SectionAuthorTrust } from "@/components/site/TrustBlocks";
 import {
   capabilityLadder,
   COURSE_NAMES,
@@ -65,21 +59,16 @@ const toc = [
   ["methodology", "How we ranked these 10 courses"],
   ["at-a-glance", "Top 10 at a glance + all six comparison tables"],
   ["logicmojo", "Why LogicMojo is ranked #1 for salary-focused learners"],
-  ["how-to-choose", "How to choose the right AI course"],
-  ["beyond-marketing", "What to look for beyond marketing"],
-  ["salary-quiz", "Salary-fit quiz — get a course recommendation"],
-  ["quiz", "AI Course Finder Quiz — find your fit"],
+  ["quiz", "AI course finder quiz — which course fits your salary goal?"],
   ["reviews", "In-depth reviews of all 10 courses"],
-  ["salary-faqs", "Salary, placement & selection FAQs"],
-  ["faq", "Frequently asked questions"],
-  ["positioning", "Résumé, LinkedIn and the career-switch narrative"],
-  ["internal-external", "Internal move vs external switch"],
-  ["job-search", "Job search and the 2026 AI interview loop"],
-  ["mistakes-myths", "Common mistakes and AI-career myths"],
-  ["programs", "10 structured programs, compared honestly"],
-  ["path-quiz", "Which path fits you? 6-question quiz"],
-  ["transition-faqs", "20 career-transition FAQs"],
-  ["author", "Author, reviewers and trust signals"],
+  ["roles", "Highest-paying AI roles in India (2026)"],
+  ["roi", "ROI reality — fees, payback and the dropout scenario"],
+  ["red-flags", "Red flags in high-salary course marketing"],
+  ["free-vs-paid", "Free vs paid AI courses — the salary lens"],
+  ["faq", "30 frequently asked questions"],
+  ["verdict", "Final verdict — the best AI course for 2026"],
+  ["author", "About the author"],
+  ["reviewers", "Expert reviewers"],
 ];
 
 const depthTone: Record<string, string> = {
@@ -875,34 +864,16 @@ function Page() {
         </div>
       </Section>
 
-      <SectionHowToChoose />
-      <SectionBeyondMarketing />
-
-      {/* SALARY-FIT QUIZ */}
-      <Section
-        id="salary-quiz"
-        eyebrow="Interactive · 10 questions"
-        title="Which AI Course Fits Your Salary Goal? Take the 10-Question Quiz"
-      >
-        <p>
-          Answer ten questions about your experience, background, target band, budget, placement
-          needs, learning mode, weekly hours, foundations and preferred AI career path. The result
-          opens in a pop-up with the best-fit course, why it matches, the key AI modules it covers,
-          indicative role bands and the placement-support reality — plus two runner-up shortlist
-          options. No email, and no salary is ever promised.
-        </p>
-        <SalaryQuiz />
-      </Section>
-
       {/* QUIZ */}
       <Section
         id="quiz"
-        eyebrow="Interactive"
-        title="AI Course Finder Quiz — Which Program Fits Your Money, Time and Goal?"
+        eyebrow="Section 8 · Interactive"
+        title="AI Course Finder Quiz — Which AI Course Fits Your Salary Goal?"
       >
         <p>
-          Five questions, no email required. The output is a fit suggestion based on your budget,
-          available hours and the outcome you are actually buying — never a salary projection.
+          Eight questions, no email gate, result shown inline. It matches your goal, experience,
+          budget, mode, hours, target role, expectation and placement needs to the best-fit program
+          on this list — and always names an alternative. It never projects a salary.
         </p>
         <CourseFinderQuiz />
       </Section>
@@ -1206,33 +1177,12 @@ function Page() {
         </div>
       </Reveal>
 
-      <SectionResume />
-      <SectionInternalExternal />
-      <SectionJobSearch />
-      <SectionMistakesMyths />
-      <SectionPrograms />
-      <SectionPathQuiz />
-      <SectionSalaryFAQs />
-      <SectionFAQs />
-
-      {/* FAQ */}
-
-      <Section id="faq" eyebrow="Section 8 · PAA" title="Frequently Asked Questions">
-        <div className="mt-4 space-y-4">
-          {faqs.map(([q, a]) => (
-            <details
-              key={q}
-              className="group rounded-lg border border-border bg-card p-5 shadow-card"
-            >
-              <summary className="cursor-pointer list-none font-display text-lg marker:hidden">
-                <span className="mr-2 text-brass">?</span>
-                {q}
-              </summary>
-              <p className="mt-3 leading-relaxed text-muted-foreground">{a}</p>
-            </details>
-          ))}
-        </div>
-      </Section>
+      <SectionRoles />
+      <SectionROI />
+      <SectionRedFlags />
+      <SectionFreeVsPaid />
+      <SectionFAQsFull />
+      <SectionVerdict />
 
       <SectionAuthorTrust />
 
