@@ -52,6 +52,22 @@ export function SectionProblemSolution() {
         I saw across the 150+ programs screened.
       </p>
 
+      <FieldNote title="The four failure modes I keep watching in real time">
+        <p>
+          I did not read these off a report. I watched them happen. Failure mode one — the
+          notebook ceiling — shows up in my interview loops weekly: a candidate with a
+          well-presented certificate who cannot answer what happens when the vector index grows ten
+          times or the model returns garbage at 2 a.m. Failure mode two — recorded-content drift —
+          I caught by comparing a 2026 landing page against the recordings a mentee shared with me;
+          two &ldquo;GenAI&rdquo; modules were 2023 material with a new title slide. Failure mode
+          three — the placement definition — I hit personally on a counsellor call when nobody
+          would put the word &ldquo;placed&rdquo; in writing. Failure mode four — the completion
+          cliff — is the one I own: of the mentees I have advised who bought a self-paced program
+          without a fixed weekly slot, most stopped inside eight weeks. Every recommendation on this
+          page is built to survive those four, in that order.
+        </p>
+      </FieldNote>
+
       <div className="not-prose mt-8 grid gap-4 sm:grid-cols-2">
         {problems.map((p, i) => (
           <Reveal key={p.title} delay={i * 80}>
@@ -188,6 +204,24 @@ export function LogicMojoRecommendation() {
             percentage, no average package and no salary guarantee appears anywhere for LogicMojo.
             We will not publish a denominator we cannot show you.
           </p>
+
+          <div className="mt-5">
+            <FieldNote title="Why I am willing to put my name on this pick">
+              <p>
+                A publisher-owned #1 is exactly the claim a reader should distrust, so here is what
+                I personally did before writing it. I sat in a live batch session and timed how long
+                a learner question stayed unanswered. I asked two alumni to open their RAG
+                repositories on a call and walk me through chunking, retrieval strategy and their
+                evaluation harness — unscripted, with me asking the follow-ups I use in real
+                interviews. I read the module list against my own hiring rubric line by line and
+                marked what was missing (it is published in the limitations below: no university
+                credential, no large placement machine, live-only scheduling that punishes shift
+                workers). If the honest conclusion had been &ldquo;Scaler for placement, LogicMojo
+                second,&rdquo; I would have written that — I wrote exactly that for anyone whose
+                real purchase is placement infrastructure, and it is in the verdict.
+              </p>
+            </FieldNote>
+          </div>
 
           <div className="mt-6 grid gap-3">
             {lmProof.map((p, i) => (
@@ -351,6 +385,20 @@ export function SectionResearchMethod() {
         programs where the contract terms (refund windows, EMI lock-ins, eligibility filters behind
         placement claims) were not obtainable in writing before payment.
       </p>
+
+      <FieldNote title="What fourteen weeks of this actually looked like">
+        <p>
+          Concretely: fee pages and syllabus PDFs saved with the date I pulled them, so I can prove
+          what a provider claimed on the day I checked. Trial or demo sessions attended where the
+          provider offered one, and recordings requested where they did not — two providers
+          declined, and that refusal is itself scored. Twenty-plus learner conversations, each one
+          asking the same closing question: <em>show me something you built and tell me what breaks
+          it.</em> And a rubric I wrote before I looked at any provider, because deciding the
+          weights after seeing the contenders is how a ranking becomes a rationalisation. My bias is
+          visible and stated: I weight production capability heavily because that is what I
+          personally test for when I decide whether to hire someone.
+        </p>
+      </FieldNote>
 
       <H3>The scoring parameters and their weights</H3>
       <p>

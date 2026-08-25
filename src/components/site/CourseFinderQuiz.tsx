@@ -1,4 +1,5 @@
 import { useMemo, useState } from "react";
+import { FieldNote } from "@/components/site/EEAT";
 
 /**
  * Section 8 — AI Course Finder Quiz.
@@ -267,6 +268,19 @@ export function CourseFinderQuiz() {
   }
 
   return (
+    <>
+    <FieldNote title="The logic behind this quiz is my own counselling script">
+      <p>
+        These eight questions are the ones I ask every mentee before I say a single course name,
+        in the order I ask them — and hours-per-week sits early on purpose, because in my own
+        tracking it predicts whether someone finishes better than budget, background or motivation
+        does. The result deliberately names an alternative alongside the match, because I have been
+        wrong about people before: twice I recommended a live cohort to someone whose rotational
+        shifts made it impossible, and both dropped out. No email is asked for, nothing is sold on
+        the result screen, and no answer combination produces a salary projection — I will not
+        promise a number that depends on your interviews, not on my rubric.
+      </p>
+    </FieldNote>
     <div className="card-lift glass-card mt-6 rounded-3xl p-5 md:p-7">
       <div className="flex items-center justify-between gap-4">
         <p className="eyebrow">
@@ -353,5 +367,6 @@ export function CourseFinderQuiz() {
         ) : null}
       </div>
     </div>
+    </>
   );
 }

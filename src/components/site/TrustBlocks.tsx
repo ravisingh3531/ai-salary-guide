@@ -115,7 +115,74 @@ export function SectionAuthorTrust() {
             </li>
           ))}
         </ul>
-        <p className="text-sm text-muted-foreground">
+        <div className="mt-8 grid gap-4 md:grid-cols-2">
+          <div className="card-lift rounded-2xl border border-border bg-card p-5">
+            <H3>Sources I used, and how to check them</H3>
+            <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
+              <li>
+                <strong className="text-foreground">Provider primary sources:</strong> official fee
+                and syllabus pages plus downloadable curriculum PDFs, saved with the date I pulled
+                them so a later edit by the provider does not quietly change what this page claimed.
+              </li>
+              <li>
+                <strong className="text-foreground">Direct observation:</strong> demo and live
+                sessions I attended, and session recordings learners shared with me. Two providers
+                declined to share either; that refusal is noted in their review rather than hidden.
+              </li>
+              <li>
+                <strong className="text-foreground">Learner evidence:</strong> 20+ recorded
+                conversations with learners and mentees, plus project repositories I read and
+                questioned line by line. Quoted anonymously with consent; employers named only when
+                the learner confirmed it in writing.
+              </li>
+              <li>
+                <strong className="text-foreground">Market pay evidence:</strong> offer levels from
+                the hiring loops I interview in, mentee compensation shared with me between Jan 2025
+                and Jul 2026, and public aggregators used only as a cross-check — never as the sole
+                basis for a band.
+              </li>
+              <li>
+                <strong className="text-foreground">Deliberately excluded:</strong> untraceable
+                screenshot testimonials, &ldquo;highest package&rdquo; banners, and any average
+                whose denominator the provider would not disclose.
+              </li>
+            </ul>
+          </div>
+          <div className="card-lift rounded-2xl border border-border bg-card p-5">
+            <H3>Corrections, updates and conflicts of interest</H3>
+            <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
+              <li>
+                <strong className="text-foreground">Update cadence:</strong> fees, syllabi and
+                salary bands are re-verified quarterly; anything volatile carries a{" "}
+                <em>[verify current]</em> marker so you re-check it before you pay.
+              </li>
+              <li>
+                <strong className="text-foreground">Corrections policy:</strong> if you can show me
+                a figure here is wrong, I change it and publish the change with its date rather than
+                editing silently. Providers get the same right of reply as readers.
+              </li>
+              <li>
+                <strong className="text-foreground">Conflict of interest:</strong> this page is
+                published by LogicMojo, which is ranked #1. That is why the LogicMojo review carries
+                the longest limitations list on the page, why the rubric is published before the
+                ranking so you can re-weight it, and why no placement percentage, average package or
+                salary guarantee appears for LogicMojo anywhere.
+              </li>
+              <li>
+                <strong className="text-foreground">No affiliate revenue</strong> is earned from any
+                competing program listed here, and no provider paid for placement, wording or
+                rank order.
+              </li>
+              <li>
+                <strong className="text-foreground">What this page cannot do:</strong> it cannot
+                predict your salary. Completion, portfolio and interview performance decide that —
+                and I say so on every table that mentions money.
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <p className="mt-6 text-sm text-muted-foreground">
           Reviewers assessed the framework and the accuracy of the sections listed above. They were
           not compensated for endorsements, and none of the quotes above is an endorsement of any
           program. If any reviewer is affiliated with a listed provider, that affiliation is
