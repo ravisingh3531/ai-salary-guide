@@ -840,10 +840,10 @@ function Page() {
             <article
               key={rv.rank}
               id={`review-${rv.rank}`}
-              className="scroll-mt-24 rounded-xl border border-border bg-card p-6 shadow-card md:p-8"
+              className="card-lift scroll-mt-24 rounded-2xl border border-border bg-card p-6 shadow-card md:p-8"
             >
               <div className="flex flex-wrap items-center gap-3">
-                <span className="flex h-10 w-10 items-center justify-center rounded-full bg-ink font-display text-xl text-ink-foreground">
+                <span className="flex h-10 w-10 items-center justify-center rounded-full bg-[image:var(--gradient-blue)] font-display text-xl text-primary-foreground shadow-glow">
                   {rv.rank}
                 </span>
                 <Pill tone="brass">Ceiling: {rv.ceiling}</Pill>
@@ -919,7 +919,7 @@ function Page() {
                 </div>
               </div>
 
-              <div className="mt-6 rounded-lg bg-paper p-4">
+              <div className="mt-6 rounded-2xl border border-accent/20 bg-paper p-4">
                 <p className="eyebrow mb-3">Rating block</p>
                 <div className="grid gap-2.5">
                   {rv.ratings.map((r) => (
@@ -927,7 +927,7 @@ function Page() {
                       <span className="w-56 shrink-0 text-xs text-muted-foreground">{r.label}</span>
                       <div className="h-1.5 flex-1 rounded-full bg-secondary">
                         <div
-                          className="h-full rounded-full bg-brass"
+                          className="h-full rounded-full bg-[image:var(--gradient-blue)] transition-all duration-700"
                           style={{ width: `${r.score * 10}%` }}
                         />
                       </div>
