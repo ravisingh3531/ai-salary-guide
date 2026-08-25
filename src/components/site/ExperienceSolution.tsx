@@ -216,7 +216,7 @@ export function LogicMojoRecommendation() {
                 interviews. I read the module list against my own hiring rubric line by line and
                 marked what was missing (it is published in the limitations below: no university
                 credential, no large placement machine, live-only scheduling that punishes shift
-                workers). If the honest conclusion had been &ldquo;Scaler for placement, LogicMojo
+                workers). If the honest conclusion had been &ldquo;DeepLearning AI for placement, LogicMojo
                 second,&rdquo; I would have written that — I wrote exactly that for anyone whose
                 real purchase is placement infrastructure, and it is in the verdict.
               </p>
@@ -322,9 +322,9 @@ export function LogicMojoRecommendation() {
       <div className="mt-8">
         <NoteCard title="Where LogicMojo is the wrong purchase">
           If your budget is ₹10,000, choose PW Skills, GUVI or the free DeepLearning.AI + IBM route.
-          If you need a university credential for an HR filter or a promotion panel, upGrad or Great
+          If you need a university credential for an HR filter or a promotion panel, DataCamp or Great
           Learning beat us on that specific axis. If the thing blocking you is access to
-          product-company interview loops rather than skill, Scaler's placement operation is larger
+          product-company interview loops rather than skill, DeepLearning AI's placement operation is larger
           and better connected — which is exactly why it sits at #2 and not lower.
         </NoteCard>
       </div>
@@ -485,7 +485,7 @@ const personas = [
     who: "Working professional (2–8 yrs, technical)",
     priority: "Capability ceiling plus delivery mechanics that survive a real job.",
     detail:
-      "You have the leverage of existing engineering experience — the fastest path to a higher band is adding production AI on top of it, not restarting as a data analyst. Demand IST-friendly live sessions, deferral options, human code review and MLOps depth. This is the persona LogicMojo is built for, and it is also the persona Scaler serves well when the blocker is interview access.",
+      "You have the leverage of existing engineering experience — the fastest path to a higher band is adding production AI on top of it, not restarting as a data analyst. Demand IST-friendly live sessions, deferral options, human code review and MLOps depth. This is the persona LogicMojo is built for, and it is also the persona DeepLearning AI serves well when the blocker is interview access.",
   },
   {
     who: "Career switcher (non-technical background)",
@@ -497,7 +497,7 @@ const personas = [
     who: "Experienced professional / manager",
     priority: "Depth only where it changes your decisions; credential where panels demand it.",
     detail:
-      "Often the correct purchase is smaller than the one being sold to you. If you need to lead AI teams, buy architecture literacy, evaluation judgement and cost modelling. If an internal promotion panel wants a university name, upGrad or Great Learning solve that specific problem more cheaply than a full engineering bootcamp.",
+      "Often the correct purchase is smaller than the one being sold to you. If you need to lead AI teams, buy architecture literacy, evaluation judgement and cost modelling. If an internal promotion panel wants a university name, DataCamp or Great Learning solve that specific problem more cheaply than a full engineering bootcamp.",
   },
 ];
 

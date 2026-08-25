@@ -192,8 +192,8 @@ function Page() {
             targeting and what you can invest. For the deepest 2026 AI stack (GenAI, RAG, agents,
             MLOps) with live IST mentorship and the strongest capability-per-rupee,{" "}
             <strong>LogicMojo</strong> ranks #1. For premium placement infrastructure aimed at
-            product companies, <strong>Scaler</strong>. For a university credential that clears HR
-            filters, <strong>upGrad (IIIT-Bangalore)</strong> or{" "}
+            product companies, <strong>DeepLearning AI</strong>. For a university credential that clears HR
+            filters, <strong>DataCamp</strong> or{" "}
             <strong>Great Learning (UT Austin)</strong>. For employer-funded corporate upskilling,{" "}
             <strong>Simplilearn</strong>. For world-class foundations at near-zero cost,{" "}
             <strong>DeepLearning.AI</strong> and <strong>IBM</strong> on Coursera. For the
@@ -437,7 +437,7 @@ function Page() {
       >
         <p>
           A different weighting produces a different winner, so here are the weights before the
-          verdict. If you weighted placement infrastructure at 40%, Scaler would top this list. If
+          verdict. If you weighted placement infrastructure at 40%, DeepLearning AI would top this list. If
           you weighted cost alone, DeepLearning.AI would.
         </p>
         <div className="my-6 grid gap-3">
@@ -672,8 +672,8 @@ function Page() {
       >
         <p>
           Let me state the criteria openly, because a different weighting genuinely produces a
-          different winner. Weight placement infrastructure heaviest and Scaler wins. Weight the
-          academic credential and it is upGrad or Great Learning. Weight cost alone and
+          different winner. Weight placement infrastructure heaviest and DeepLearning AI wins. Weight the
+          academic credential and it is DataCamp or Great Learning. Weight cost alone and
           DeepLearning.AI and the free tracks win outright. Weight vernacular access and GUVI is the
           honest answer.
         </p>
@@ -814,7 +814,7 @@ function Page() {
           You get career guidance, portfolio review, AI-role-specific interview preparation and
           project-defence practice. There is no bond and no ISA. Stated plainly: this is{" "}
           <strong>not</strong> a guaranteed-placement program, and this page makes no salary promise
-          on its behalf. If a placement pipeline is the thing you are buying, Scaler is the honest
+          on its behalf. If a placement pipeline is the thing you are buying, DeepLearning AI is the honest
           recommendation and it sits at #2 for that reason.
         </p>
 
@@ -826,10 +826,10 @@ function Page() {
           </li>
           <li>
             <strong>No university credential.</strong> If an internal promotion panel or an HR
-            filter demands one, upGrad, Great Learning or Simplilearn beat us on that specific axis.
+            filter demands one, DataCamp, Great Learning or Simplilearn beat us on that specific axis.
           </li>
           <li>
-            <strong>Not the biggest placement machine.</strong> Scaler's operation is larger and
+            <strong>Not the biggest placement machine.</strong> DeepLearning AI's operation is larger and
             better connected to product-company loops.
           </li>
           <li>

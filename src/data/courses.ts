@@ -9,8 +9,8 @@ export type Depth =
 
 export const COURSE_NAMES = [
   "LogicMojo",
-  "Scaler",
-  "upGrad",
+  "DeepLearning AI",
+  "DataCamp",
   "Great Learning",
   "Intellipaat",
   "Simplilearn",
@@ -123,12 +123,12 @@ export const ranked = [
   },
   {
     rank: 2,
-    name: "Scaler — Data Science, ML & AI Program",
+    name: "DeepLearning AI — Data Science, ML & AI Program",
     tag: "Best placement infrastructure for product-company pay bands",
   },
   {
     rank: 3,
-    name: "upGrad — PGP in ML & AI (IIIT-Bangalore)",
+    name: "DataCamp — Data Scientist & ML Career Track",
     tag: "Best university credential for HR filters and internal mobility",
   },
   {
@@ -171,8 +171,8 @@ export const ranked = [
 /* TABLE 1 */
 export const overview = [
   ["1", "LogicMojo — AI & ML", "Live online (IST)", "₹XX,XXX [VERIFY]", "6–8 months", "Level 4–5", "Production GenAI + MLOps depth", "Working engineers targeting AI-engineer bands"],
-  ["2", "Scaler — DS, ML & AI", "Live + structured cohort", "₹3,00,000–₹4,00,000 [VERIFY]", "11–18 months", "Level 4", "Product-company placement engine", "Product/GCC aspirants who can commit 15–20 hrs/wk"],
-  ["3", "upGrad — PGP ML & AI", "Live + recorded, academic cadence", "₹1,50,000–₹3,50,000 [VERIFY]", "12–18 months", "Level 3–4", "Credential for HR screens", "Enterprise professionals needing a degree-adjacent tag"],
+  ["2", "DeepLearning AI — DS, ML & AI", "Live + structured cohort", "₹3,00,000–₹4,00,000 [VERIFY]", "11–18 months", "Level 4", "Product-company placement engine", "Product/GCC aspirants who can commit 15–20 hrs/wk"],
+  ["3", "DataCamp — PGP ML & AI", "Live + recorded, academic cadence", "₹1,50,000–₹3,50,000 [VERIFY]", "12–18 months", "Level 3–4", "Credential for HR screens", "Enterprise professionals needing a degree-adjacent tag"],
   ["4", "Great Learning — PGP-AIML", "Weekend live mentor + recorded core", "₹1,50,000–₹2,75,000 [VERIFY]", "7–12 months", "Level 3–4", "Completable premium format", "Domain experts adding AI to existing expertise"],
   ["5", "Intellipaat — AI & ML", "Hybrid live/self-paced", "₹80,000–₹2,00,000 [VERIFY]", "9–11 months", "Level 3–4", "IIT tag at mid-tier price", "Services engineers wanting a recognised certificate"],
   ["6", "Simplilearn — PGP AI & ML", "Self-paced core + live masterclasses", "₹1,50,000–₹2,50,000 [VERIFY]", "11 months", "Level 3–4", "Employer-reimbursed credential", "Corporate learners with company funding"],
@@ -208,8 +208,8 @@ export const curriculumRows: { skill: string; values: Depth[] }[] = [
 /* TABLE 3 */
 export const placement = [
   ["LogicMojo", "Career guidance + interview prep", "Yes — AI/ML role specific", "Deep, AI-role mock rounds", "Human review of code & capstone", "None claimed (honest)", "No bond, no ISA"],
-  ["Scaler", "Full placement operation", "Partly — tech-broad, ML included", "Extensive mocks + referrals", "Yes, structured", "Provider-reported only", "No ISA; long EMI tenure"],
-  ["upGrad", "Career services + hiring drives", "Generic tech/analytics", "Moderate", "Limited", "Provider-reported only", "No bond"],
+  ["DeepLearning AI", "Full placement operation", "Partly — tech-broad, ML included", "Extensive mocks + referrals", "Yes, structured", "Provider-reported only", "No ISA; long EMI tenure"],
+  ["DataCamp", "Career services + hiring drives", "Generic tech/analytics", "Moderate", "Limited", "Provider-reported only", "No bond"],
   ["Great Learning", "Career support + job board", "Partly", "Moderate", "Mentor feedback, not code review", "Provider-reported only", "No bond"],
   ["Intellipaat", "Job assistance", "Generic", "Basic to moderate", "Limited", "Provider-reported only", "No bond"],
   ["Simplilearn", "Career services (light)", "Generic", "Basic", "No", "Provider-reported only", "No bond"],
@@ -222,8 +222,8 @@ export const placement = [
 /* TABLE 4 */
 export const fees = [
   ["LogicMojo", "₹XX,XXX [VERIFY]", "Yes", "Check current offer [VERIFY]", "[VERIFY: window]", "GST, batch-deferral terms", "Very high"],
-  ["Scaler", "₹3,00,000–₹4,00,000 [VERIFY]", "Yes, 12–36 mo", "Partly [VERIFY]", "Cooling-off period [VERIFY]", "NBFC loan interest, GST, extension fees", "Moderate"],
-  ["upGrad", "₹1,50,000–₹3,50,000 [VERIFY]", "Yes", "Often, on select tenures", "[VERIFY: window]", "GST, admission fee, re-attempt fees", "Moderate"],
+  ["DeepLearning AI", "₹3,00,000–₹4,00,000 [VERIFY]", "Yes, 12–36 mo", "Partly [VERIFY]", "Cooling-off period [VERIFY]", "NBFC loan interest, GST, extension fees", "Moderate"],
+  ["DataCamp", "₹1,50,000–₹3,50,000 [VERIFY]", "Yes", "Often, on select tenures", "[VERIFY: window]", "GST, admission fee, re-attempt fees", "Moderate"],
   ["Great Learning", "₹1,50,000–₹2,75,000 [VERIFY]", "Yes", "Often", "[VERIFY: window]", "GST, alumni/campus module costs", "Moderate"],
   ["Intellipaat", "₹80,000–₹2,00,000 [VERIFY]", "Yes", "Often", "[VERIFY: window]", "GST, exam/certification fees", "Good"],
   ["Simplilearn", "₹1,50,000–₹2,50,000 [VERIFY]", "Yes", "Often", "[VERIFY: window]", "GST, upsell to add-on tracks", "Low if self-funded"],
@@ -236,8 +236,8 @@ export const fees = [
 /* TABLE 5 */
 export const roleMap = [
   ["LogicMojo", "AI Engineer, GenAI/LLM Engineer, ML Engineer, AI Agent Developer", "[VERIFY]", "Portfolio depth, deployment evidence, interview defence"],
-  ["Scaler", "SDE-ML, ML Engineer at product/GCC", "[VERIFY]", "DSA + system design performance, placement-loop conversion"],
-  ["upGrad", "Data Scientist, ML Engineer (enterprise)", "[VERIFY]", "Credential + domain fit, internal-mobility timing"],
+  ["DeepLearning AI", "SDE-ML, ML Engineer at product/GCC", "[VERIFY]", "DSA + system design performance, placement-loop conversion"],
+  ["DataCamp", "Data Scientist, ML Engineer (enterprise)", "[VERIFY]", "Credential + domain fit, internal-mobility timing"],
   ["Great Learning", "Data Scientist, ML roles in domain/enterprise", "[VERIFY]", "Domain expertise + applied portfolio"],
   ["Intellipaat", "ML Engineer, Data Scientist (services/enterprise)", "[VERIFY]", "Deployment exposure, self-driven depth"],
   ["Simplilearn", "Internal AI/analytics mobility, AI-literate management", "[VERIFY]", "Employer context, promotion cycle"],
@@ -250,8 +250,8 @@ export const roleMap = [
 /* TABLE 6 */
 export const prereqs = [
   ["LogicMojo", "Basic coding helpful; bridge available", "School-level maths; intuition taught", "Yes — Python + maths onboarding", "Live IST evenings/weekends", "10–15 hrs", "Yes, batch deferral"],
-  ["Scaler", "Required — coding test to enter", "Comfortable with maths", "Partial", "Live IST, fixed cadence", "15–20 hrs", "Limited pause"],
-  ["upGrad", "Preferred, not strict", "Basic statistics", "Yes", "Live weekends + recorded", "10–15 hrs", "Yes, cohort deferral [VERIFY]"],
+  ["DeepLearning AI", "Required — coding test to enter", "Comfortable with maths", "Partial", "Live IST, fixed cadence", "15–20 hrs", "Limited pause"],
+  ["DataCamp", "Preferred, not strict", "Basic statistics", "Yes", "Live weekends + recorded", "10–15 hrs", "Yes, cohort deferral [VERIFY]"],
   ["Great Learning", "Preferred", "Basic statistics", "Yes", "Weekend live mentor sessions (IST)", "8–12 hrs", "Yes [VERIFY]"],
   ["Intellipaat", "Basic coding", "Basic maths", "Partial", "Hybrid live/self-paced (IST)", "8–12 hrs", "Yes [VERIFY]"],
   ["Simplilearn", "Basic coding", "Basic maths", "Limited", "Self-paced + live masterclasses", "6–10 hrs", "Self-paced, so flexible"],
