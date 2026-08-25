@@ -288,27 +288,30 @@ function Page() {
       </TableFrame>
 
       {/* SECTION 2 — TOC */}
-      <nav
-        aria-label="Table of contents"
-        className="my-10 rounded-xl border border-border bg-card p-5 shadow-card"
-      >
-        <p className="eyebrow mb-3">On this page</p>
-        <ol className="grid gap-x-8 gap-y-1.5 sm:grid-cols-2">
-          {toc.map(([id, label], i) => (
-            <li key={id} className="text-sm">
-              <a
-                href={`#${id}`}
-                className="text-muted-foreground underline-offset-4 transition-colors hover:text-foreground hover:underline"
-              >
-                <span className="mr-2 font-mono text-xs text-brass">
-                  {String(i + 1).padStart(2, "0")}
-                </span>
-                {label}
-              </a>
-            </li>
-          ))}
-        </ol>
-      </nav>
+      <Reveal as="div">
+        <nav
+          aria-label="Table of contents"
+          className="glass-card card-lift my-10 rounded-2xl p-6"
+        >
+          <p className="eyebrow mb-3">On this page</p>
+          <ol className="grid gap-x-8 gap-y-1.5 sm:grid-cols-2">
+            {toc.map(([id, label], i) => (
+              <li key={id} className="text-sm">
+                <a
+                  href={`#${id}`}
+                  className="group inline-flex items-start gap-2 rounded-md px-1 py-1 text-muted-foreground transition-colors hover:bg-accent/10 hover:text-foreground"
+                >
+                  <span className="mt-0.5 font-mono text-xs text-accent transition-transform group-hover:translate-x-0.5">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  {label}
+                </a>
+              </li>
+            ))}
+          </ol>
+        </nav>
+      </Reveal>
+
 
       {/* SECTION 3 */}
       <Section
