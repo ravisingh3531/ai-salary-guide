@@ -847,6 +847,25 @@ function Page() {
         </div>
       </Section>
 
+      <SectionHowToChoose />
+      <SectionBeyondMarketing />
+
+      {/* SALARY-FIT QUIZ */}
+      <Section
+        id="salary-quiz"
+        eyebrow="Interactive · 10 questions"
+        title="Which AI Course Fits Your Salary Goal? Take the 10-Question Quiz"
+      >
+        <p>
+          Answer ten questions about your experience, background, target band, budget, placement
+          needs, learning mode, weekly hours, foundations and preferred AI career path. The result
+          opens in a pop-up with the best-fit course, why it matches, the key AI modules it covers,
+          indicative role bands and the placement-support reality — plus two runner-up shortlist
+          options. No email, and no salary is ever promised.
+        </p>
+        <SalaryQuiz />
+      </Section>
+
       {/* QUIZ */}
       <Section
         id="quiz"
