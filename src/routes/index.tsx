@@ -38,6 +38,55 @@ const TITLE = "Top 10 Best AI Courses with High Salary (2026) | Fees & ROI";
 const DESC =
   "I compared 150+ AI courses in India on fees, curriculum depth, placement support and realistic salary potential. Honest 2026 rankings, ROI math and a course finder quiz.";
 
+
+const SCHEMA = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      headline: TITLE,
+      description: DESC,
+      inLanguage: "en-IN",
+      datePublished: "[INSERT DATE]",
+      dateModified: "[INSERT DATE]",
+      author: { "@type": "Person", name: "[INSERT: Author name]", jobTitle: "AI education and careers analyst" },
+      publisher: { "@type": "Organization", name: "LogicMojo" },
+    },
+    {
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Home", item: "/" },
+        { "@type": "ListItem", position: 2, name: "Best AI courses with high salary", item: "/best-ai-courses-with-high-salary" },
+      ],
+    },
+    {
+      "@type": "ItemList",
+      name: "Top 10 best AI courses with high salary potential (2026)",
+      itemListElement: COURSE_NAMES.map((name, i) => ({
+        "@type": "ListItem",
+        position: i + 1,
+        name,
+      })),
+    },
+    ...COURSE_NAMES.map((name) => ({
+      "@type": "Course",
+      name,
+      description: `Reviewed on this page against curriculum depth, format, fees and career support for Indian learners in 2026.`,
+      provider: { "@type": "Organization", name },
+    })),
+    {
+      "@type": "FAQPage",
+      mainEntity: faqGroups.flatMap((g) =>
+        g.items.map(([q, a]) => ({
+          "@type": "Question",
+          name: q,
+          acceptedAnswer: { "@type": "Answer", text: a },
+        })),
+      ),
+    },
+  ],
+};
+
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
@@ -103,52 +152,15 @@ function Head({ cols }: { cols: string[] }) {
   );
 }
 
-const faqs = [
-  [
-    "Which AI course gives the highest salary?",
-    "No course gives a salary — the role you can perform does. The courses that reach the highest role bands are the ones that take you to Level 4 capability: production RAG, fine-tuning, agents and MLOps with a deployed portfolio. On this list that is LogicMojo for depth, and Scaler if the binding constraint is access to product-company hiring loops.",
-  ],
-  [
-    "What salary can I expect after an AI course in India?",
-    "Expect a range attached to the role you can credibly interview for, not to the course. Entry AI/ML roles, mid AI-engineer roles and senior AI roles each carry their own bands [VERIFY: aggregator source, month/year]. Where you land inside a band depends on prior experience, city, company type, portfolio quality and negotiation.",
-  ],
-  [
-    "Is an AI course worth the fee?",
-    "It is worth it when the capability ceiling it can take you to is above the ceiling you already have, and when you will actually finish. A ₹2,00,000 program abandoned in month three is the worst outcome on this page; a ₹15,000 program finished with three deployed projects frequently beats it in an interview loop.",
-  ],
-  [
-    "Are the '₹20–40 LPA' claims on course landing pages real?",
-    "Usually they are real numbers computed in a flattering way. The three patterns to watch: a single topper CTC shown as the headline, an 'average' computed only on placement-eligible learners after filters remove most of the batch, and role-title inflation where an 'AI engineer' offer is a support role using an AI tool.",
-  ],
-  [
-    "Does an AI certification increase salary by itself?",
-    "Rarely at the offer stage. Certificates help clear HR screens, internal promotion panels and services-company documentation. Technical rounds price your portfolio and your ability to defend it.",
-  ],
-  [
-    "AI vs data science — which pays more in 2026?",
-    "Production AI and GenAI engineering roles currently price above generalist data-analysis roles because the supply of people who can deploy and monitor an LLM system is thinner [VERIFY: source, date]. The gap narrows for senior data scientists who own modelling decisions.",
-  ],
-  [
-    "How long does it take to recover the course fee?",
-    "Frame it as fee ÷ monthly in-hand delta, then add the months until you actually switch. Be honest about CTC versus in-hand: a headline CTC includes variable pay and employer contributions, so a ₹2,00,000 CTC increase is not ₹16,667 extra in your account each month.",
-  ],
-  [
-    "Can a fresher get a high salary after an online AI course?",
-    "A fresher can reach entry AI bands with a strong deployed portfolio, but competition at entry level is severe and role-title inflation is worst there. Freshers should optimise for demonstrable projects and interview reps, not for the most expensive certificate.",
-  ],
-  [
-    "Do employers verify AI certificates?",
-    "Some HR teams verify enrolment; technical interviewers largely ignore the certificate and interrogate the repository. Assume your GitHub is the document that gets read.",
-  ],
-  [
-    "Will these skills still command a premium in 18 months?",
-    "The premium moves. Prompting was a differentiator, then baseline. Production RAG and agents are heading the same way. The durable asset is engineering judgement — evaluation, deployment, monitoring and cost control — which is why MLOps weighting matters more than any single framework.",
-  ],
-];
+
 
 function Page() {
   return (
-    <main className="mx-auto max-w-4xl px-5 pb-24 md:px-8">
+    <main className="mx-auto max-w-4xl px-5 pb-28 md:px-8">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(SCHEMA) }}
+      />
       {/* SECTION 1 */}
       <header className="relative pt-14 md:pt-20">
         <div
@@ -158,7 +170,8 @@ function Page() {
         <div className="rise-in flex flex-wrap items-center gap-2">
           <Pill tone="ink">2026 edition</Pill>
           <Pill tone="brass">Commercial comparison</Pill>
-          <Pill>Last reviewed: quarterly cadence</Pill>
+          <Pill>Last updated: [INSERT DATE] · re-verified quarterly</Pill>
+          <Pill>~45 min read</Pill>
         </div>
         <h1 className="rise-in mt-5 text-[2.6rem] leading-[1.05] text-gradient md:text-6xl">
           Top 10 Best AI Courses with High Salary (2026) — Fees, Curriculum, Placement Support,
