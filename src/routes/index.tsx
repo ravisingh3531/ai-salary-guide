@@ -62,6 +62,8 @@ const toc = [
   ["solution", "The problem, the cost, and my #1 recommendation"],
   ["research", "How I researched & ranked these 10 courses"],
   ["methodology", "How we ranked these 10 courses"],
+  ["at-a-glance", "Top 10 at a glance + all six comparison tables"],
+  ["logicmojo", "Why LogicMojo is ranked #1 for salary-focused learners"],
   ["how-to-choose", "How to choose the right AI course"],
   ["beyond-marketing", "What to look for beyond marketing"],
   ["salary-quiz", "Salary-fit quiz — get a course recommendation"],
