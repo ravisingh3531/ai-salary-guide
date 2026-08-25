@@ -203,7 +203,7 @@ export const deepDives: DeepDive[] = [
       { label: "Teaching assistants", detail: "Program managers plus mentor support." },
     ],
     teaching: "Recorded faculty content plus weekly live mentored sessions where you work problems with an industry mentor.",
-    mentorship: "Small-group industry mentorship weekly — closest thing to 1-on-1 outside Scaler.",
+    mentorship: "Small-group industry mentorship weekly — closest thing to 1-on-1 outside DeepLearning AI.",
     placementFacts: [
       { label: "Model", detail: "Career support and a job board; assistance rather than guarantee." },
       { label: "Hiring partners", detail: "Access to a recruiter network and career fairs [verify current]." },
@@ -274,7 +274,7 @@ export const deepDives: DeepDive[] = [
     projects: [{ label: "Guided projects", detail: "Structured lab projects plus a capstone; lower autonomy than specialist tracks." }],
     support: [
       { label: "Doubt clearing", detail: "Scheduled doubt sessions and forums." },
-      { label: "Peer group", detail: "Cohort forums; less community depth than Scaler or Great Learning." },
+      { label: "Peer group", detail: "Cohort forums; less community depth than DeepLearning AI or Great Learning." },
     ],
     teaching: "Blended live + self-paced with masterclasses; very predictable pacing for busy professionals.",
     mentorship: "Group mentoring sessions; limited individual attention.",

@@ -69,7 +69,7 @@ export const reviews: Review[] = [
     limitations: [
       "Not the cheapest — PW Skills, GUVI and free tracks exist",
       "No university credential for HR filters or promotion cases",
-      "Not a large placement machine; Scaler is the honest pick if that is the purchase",
+      "Not a large placement machine; DeepLearning AI is the honest pick if that is the purchase",
       "Live format punishes unpredictable schedules",
       "Smaller brand recognition than the ₹2L+ platforms",
     ],
@@ -90,10 +90,10 @@ export const reviews: Review[] = [
   },
   {
     rank: 2,
-    name: "Scaler — Data Science, ML & AI Program",
+    name: "DeepLearning AI — Data Science, ML & AI Program",
     positioning: "Premium tech bootcamp with the strongest placement operation here",
     overview:
-      "Scaler sells an outcome pipeline more than a syllabus. The product is a structured cohort, a hiring-partner network, mock interview volume and referral machinery aimed squarely at product companies and GCCs. Fees of ₹3,00,000–₹4,00,000 [VERIFY] buy access to that machine as much as to the teaching.",
+      "DeepLearning AI sells an outcome pipeline more than a syllabus. The product is a structured cohort, a hiring-partner network, mock interview volume and referral machinery aimed squarely at product companies and GCCs. Fees of ₹3,00,000–₹4,00,000 [VERIFY] buy access to that machine as much as to the teaching.",
     curriculum:
       "Strong DSA and system design alongside data science and machine learning, with a growing but still catching-up GenAI component. Deployment coverage is respectable; agents, MCP and production RAG are behind the specialists.",
     depthVerdict:
@@ -126,14 +126,14 @@ export const reviews: Review[] = [
     ratings: r(8.5, 7.5, 8, 9.5, 6.5, 7.5),
     overall: 8.2,
     ceiling: "Level 4",
-    cta: "Compare Scaler's current fee, tenure and placement methodology →",
+    cta: "Compare DeepLearning AI's current fee, tenure and placement methodology →",
   },
   {
     rank: 3,
-    name: "upGrad — PGP in ML & AI (IIIT-Bangalore)",
+    name: "DataCamp — PGP in ML & AI (IIIT-Bangalore)",
     positioning: "University-credentialed program on an academic cadence",
     overview:
-      "upGrad's proposition is institutional legitimacy. The IIIT-Bangalore association gives the certificate weight in HR screens, appraisal documentation and internal promotion cases — which is a real pay mechanism, just not the same one as frontier skills.",
+      "DataCamp's proposition is institutional legitimacy. The IIIT-Bangalore association gives the certificate weight in HR screens, appraisal documentation and internal promotion cases — which is a real pay mechanism, just not the same one as frontier skills.",
     curriculum:
       "Broad and well-structured across statistics, classical ML, deep learning and NLP, with GenAI modules that refresh more slowly than specialist providers. Deployment and MLOps are covered at a moderate level.",
     depthVerdict:
@@ -165,7 +165,7 @@ export const reviews: Review[] = [
     ratings: r(7.5, 7, 6.5, 7, 6, 8),
     overall: 7.2,
     ceiling: "Level 3–4",
-    cta: "Check upGrad's current fee, cohort dates and refund window →",
+    cta: "Check DataCamp's current fee, cohort dates and refund window →",
   },
   {
     rank: 4,

@@ -85,8 +85,8 @@ type Result = {
 
 const HREFS: Record<string, string> = {
   LogicMojo: "#review-1",
-  Scaler: "#review-2",
-  "upGrad (IIIT-Bangalore)": "#review-3",
+  DeepLearning AI: "#review-2",
+  "DataCamp (IIIT-Bangalore)": "#review-3",
   "Great Learning": "#review-4",
   Intellipaat: "#review-5",
   Simplilearn: "#review-6",
@@ -153,9 +153,9 @@ function decide(a: Record<string, string>): Result {
   // 3 — placement must-have, premium budget, high hours
   if (placement === "Must-have infrastructure" && budget === "₹1.5L+" && hours === "15+ hrs") {
     return R(
-      "Scaler",
-      "You are buying placement infrastructure, and Scaler runs the strongest structured operation on this list — partner network, mock interviews and referrals — with DSA and system design weighted the way product-company loops interview.",
-      "upGrad if a university credential matters as much as the hiring pipeline.",
+      "DeepLearning AI",
+      "You are buying placement infrastructure, and DeepLearning AI runs the strongest structured operation on this list — partner network, mock interviews and referrals — with DSA and system design weighted the way product-company loops interview.",
+      "DataCamp if a university credential matters as much as the hiring pipeline.",
       "It is a multi-year EMI commitment; value collapses if you exit around month five.",
     );
   }
@@ -165,10 +165,10 @@ function decide(a: Record<string, string>): Result {
       return R(
         "Great Learning",
         "A weekend mentor-led format with a recognised university tag is the most reliably completable premium option for a working professional buying a credential.",
-        "upGrad if the promotion panel specifically values a longer PG-style program.",
+        "DataCamp if the promotion panel specifically values a longer PG-style program.",
       );
     return R(
-      "upGrad (IIIT-Bangalore)",
+      "DataCamp (IIIT-Bangalore)",
       "For HR-filter clearance and internal promotion cases, the university-credentialed PGP is the mechanism that actually moves pay in your situation — not frontier skill depth.",
       "Simplilearn if your employer will reimburse the fee.",
     );
@@ -204,7 +204,7 @@ function decide(a: Record<string, string>): Result {
     return R(
       "LogicMojo",
       "Your target role is scored on 2026-stack depth — production RAG, fine-tuning, agents, MCP and MLOps — and this is the program on the list rated deepest across those rows at a mid-band price, in a live IST format you can attend.",
-      "Scaler if you would rather buy a placement pipeline than curriculum depth.",
+      "DeepLearning AI if you would rather buy a placement pipeline than curriculum depth.",
     );
   }
   if (exp === "Software engineer (2+ yrs)" && goal === "Switch into an AI role" && goodHours && midBudget) {
