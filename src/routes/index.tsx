@@ -406,6 +406,9 @@ function Page() {
         </p>
       </Section>
 
+      <SectionProblemSolution />
+      <SectionResearchMethod />
+
       {/* SECTION 4 */}
       <Section
         id="methodology"
