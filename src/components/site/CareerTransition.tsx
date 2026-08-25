@@ -1,3 +1,4 @@
+import { FieldNote } from "@/components/site/EEAT";
 import { Callout, H3, NoteCard, Pill, Reveal, Section, StatCard, TableFrame, Verify } from "@/components/site/primitives";
 
 /* ------------------------------------------------------------------ */
@@ -38,6 +39,12 @@ export function SectionResume() {
       eyebrow="Section 9 · Positioning"
       title="Positioning: How to Present 5 Years of IT + 6 Months of AI"
     >
+      <FieldNote title={"Rewriting résumés I would actually shortlist"}>
+        <p>
+          I have screened AI CVs from both sides: as the interviewer skimming 60 profiles in an afternoon, and as a mentor rewriting them line by line. The single change that moved callbacks most in my mentee group was replacing tool lists with outcome sentences — "built a RAG assistant over 12k support tickets; cut retrieval errors from 31% to 9% with hybrid search and re-ranking" beats "LangChain, FAISS, OpenAI" every time, because it gives me something to interrogate.
+        </p>
+      </FieldNote>
+
       <p>
         A switcher's résumé is not a history document. It is an argument that your existing
         engineering judgement plus your new AI capability already clears the bar for the role you
@@ -191,6 +198,12 @@ export function SectionInternalExternal() {
       eyebrow="Section 10 · The decision"
       title="The Decision Nobody Writes About: Change Roles Inside, or Change Companies?"
     >
+      <FieldNote title={"Two switchers, two very different routes"}>
+        <p>
+          A test-automation engineer I mentored moved internally in seven months by volunteering for an internal document-search pilot — lower risk, smaller hike, real production exposure. A support engineer with no internal AI work to attach to switched externally in eleven months for roughly double the increment, but interviewed through nine loops to get there. Both were right for their situation; the matrix below is the reasoning I walked them through.
+        </p>
+      </FieldNote>
+
       <p className="text-lg">
         Most transition advice assumes you are leaving. In practice the fastest route to your first
         line of paid AI experience is often the pilot already running two floors away.
@@ -379,6 +392,12 @@ export function SectionJobSearch() {
       eyebrow="Section 11 · Search & loop"
       title="From Portfolio to Offer: The Search and the Loop"
     >
+      <FieldNote title={"What I ask in the rounds I run"}>
+        <p>
+          In the GenAI loops I have run through 2025–26, the round that eliminates most candidates is not coding — it is the project defence. I pick one line off the CV and go three questions deep: why that chunk size, how you measured retrieval quality, what happens when the vector store returns nothing relevant. Candidates who built the thing answer in seconds; candidates who followed a tutorial stall on question two.
+        </p>
+      </FieldNote>
+
       <H3 id="channels">Where the roles are (and how to apply)</H3>
       <TableFrame
         label="Table · Channels"
@@ -615,6 +634,12 @@ export function SectionMistakesMyths() {
       eyebrow="Section 12 · Reality check"
       title="The Mistakes That Stall Transitions — and the Myths Behind Them"
     >
+      <FieldNote title={"Mistakes I have watched cost real money"}>
+        <p>
+          The two most expensive patterns I keep seeing in my inbox: paying a premium fee for content the learner never had the weekly hours to finish, and treating a certificate as the deliverable instead of a defensible project. I have never once been asked, in any loop I sat on, to look at a certificate.
+        </p>
+      </FieldNote>
+
       <H3 id="mistakes">Eight mistakes I keep seeing</H3>
       <div className="mt-5 grid gap-4 sm:grid-cols-2">
         {mistakes.map(([t, d], i) => (

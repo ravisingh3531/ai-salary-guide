@@ -1,3 +1,4 @@
+import { FieldNote } from "@/components/site/EEAT";
 import { Callout, H3, NoteCard, Pill, Reveal, Section, StatCard } from "@/components/site/primitives";
 
 const SUCCESS = "https://logicmojo.com/success-story";
@@ -470,6 +471,12 @@ export function SectionHowToChoose() {
       eyebrow="Decision framework"
       title="How to Choose the Right AI Course for a High-Salary Career in India"
     >
+      <FieldNote title={"The question I ask every mentee first"}>
+        <p>
+          Before fees, before rankings, I ask: how many focused hours can you protect every week for the next six months, honestly? That one number predicts outcomes in my mentee group better than budget or prior degree. Learners who could protect 10–12 real hours finished; learners who assumed 20 and had 6 dropped out of programs that were otherwise excellent for them.
+        </p>
+      </FieldNote>
+
       <p>
         There is no single best course, and any page that says otherwise is selling something. There
         is a best course <em>for your starting point, your constraint and your target role</em>.
@@ -557,6 +564,12 @@ export function SectionBeyondMarketing() {
       eyebrow="Consumer protection"
       title='What to Look For Beyond "Marketing"'
     >
+      <FieldNote title={"How I test a placement claim in ten minutes"}>
+        <p>
+          My routine: search LinkedIn for the program name plus a real AI job title, sort by recent, and open ten profiles. If most hold analyst, annotation or support titles, the banner number is doing work the curriculum is not. Then I ask the counsellor two questions in writing — what is the denominator of that percentage, and what disqualifies a learner from it. The quality of that reply tells you more than any review site.
+        </p>
+      </FieldNote>
+
       <p>
         Two phrases do most of the work in Indian AI-course advertising, and they are not
         equivalent. <strong>"100% placement assistance"</strong> means the provider will help — CV
