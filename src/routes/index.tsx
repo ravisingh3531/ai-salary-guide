@@ -2,6 +2,15 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
 import { Callout, H3, NoteCard, Pill, Reveal, Section, StatCard, TableFrame } from "@/components/site/primitives";
 import { CourseFinderQuiz } from "@/components/site/CourseFinderQuiz";
+import { SalaryQuiz } from "@/components/site/SalaryQuiz";
+import {
+  SectionBeyondMarketing,
+  SectionHowToChoose,
+  SectionProblemSolution,
+  SectionResearchMethod,
+  SectionSalaryFAQs,
+} from "@/components/site/ExperienceSolution";
+import { deepDiveByRank } from "@/data/deepdive";
 import {
   SectionInternalExternal,
   SectionJobSearch,
@@ -50,11 +59,17 @@ export const Route = createFileRoute("/")({
 
 const toc = [
   ["premium", "Why AI skills command a salary premium in 2026"],
+  ["solution", "The problem, the cost, and my #1 recommendation"],
+  ["research", "How I researched & ranked these 10 courses"],
   ["methodology", "How we ranked these 10 courses"],
   ["at-a-glance", "Top 10 at a glance + all six comparison tables"],
   ["logicmojo", "Why LogicMojo is ranked #1 for salary-focused learners"],
+  ["how-to-choose", "How to choose the right AI course"],
+  ["beyond-marketing", "What to look for beyond marketing"],
+  ["salary-quiz", "Salary-fit quiz — get a course recommendation"],
   ["quiz", "AI Course Finder Quiz — find your fit"],
   ["reviews", "In-depth reviews of all 10 courses"],
+  ["salary-faqs", "Salary, placement & selection FAQs"],
   ["faq", "Frequently asked questions"],
   ["positioning", "Résumé, LinkedIn and the career-switch narrative"],
   ["internal-external", "Internal move vs external switch"],
@@ -390,6 +405,9 @@ function Page() {
           course as the thing that gets you into the room.
         </p>
       </Section>
+
+      <SectionProblemSolution />
+      <SectionResearchMethod />
 
       {/* SECTION 4 */}
       <Section
@@ -829,6 +847,25 @@ function Page() {
         </div>
       </Section>
 
+      <SectionHowToChoose />
+      <SectionBeyondMarketing />
+
+      {/* SALARY-FIT QUIZ */}
+      <Section
+        id="salary-quiz"
+        eyebrow="Interactive · 10 questions"
+        title="Which AI Course Fits Your Salary Goal? Take the 10-Question Quiz"
+      >
+        <p>
+          Answer ten questions about your experience, background, target band, budget, placement
+          needs, learning mode, weekly hours, foundations and preferred AI career path. The result
+          opens in a pop-up with the best-fit course, why it matches, the key AI modules it covers,
+          indicative role bands and the placement-support reality — plus two runner-up shortlist
+          options. No email, and no salary is ever promised.
+        </p>
+        <SalaryQuiz />
+      </Section>
+
       {/* QUIZ */}
       <Section
         id="quiz"
@@ -897,6 +934,145 @@ function Page() {
                   <strong>ROI verdict.</strong> {rv.roi}
                 </p>
               </div>
+
+              {(() => {
+                const dd = deepDiveByRank[rv.rank];
+                if (!dd) return null;
+                return (
+                  <div className="mt-6 space-y-5">
+                    <div className="rounded-2xl border border-accent/25 bg-paper p-4 md:p-5">
+                      <p className="eyebrow mb-1">Why this course for a high-paying AI career</p>
+                      <p className="text-sm leading-relaxed text-muted-foreground">{dd.thesis}</p>
+                    </div>
+
+                    <div className="grid gap-4 md:grid-cols-2">
+                      <div className="rounded-2xl border border-border p-4">
+                        <p className="eyebrow mb-2">Salary potential &amp; role outcomes</p>
+                        <ul className="space-y-2 text-sm text-muted-foreground">
+                          {dd.salary.map((s) => (
+                            <li key={s.role}>
+                              <strong className="text-foreground">{s.role}</strong> — {s.band}
+                              <span className="block text-xs text-muted-foreground/80">{s.note}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                      <div className="rounded-2xl border border-border p-4">
+                        <p className="eyebrow mb-2">Prerequisites &amp; who it suits</p>
+                        <p className="text-sm leading-relaxed text-muted-foreground">
+                          {dd.prerequisites}
+                        </p>
+                        <p className="eyebrow mb-1 mt-4">Teaching methodology</p>
+                        <p className="text-sm leading-relaxed text-muted-foreground">{dd.teaching}</p>
+                      </div>
+                    </div>
+
+                    <div className="overflow-x-auto rounded-2xl border border-border">
+                      <table className="data-table min-w-[560px]">
+                        <thead>
+                          <tr>
+                            <th>AI curriculum area</th>
+                            <th>What is covered</th>
+                            <th>Depth</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {dd.stack.map((s) => (
+                            <tr key={s.area}>
+                              <td>{s.area}</td>
+                              <td>{s.detail}</td>
+                              <td>
+                                <span
+                                  className={`rounded px-2 py-0.5 text-xs ${depthTone[s.depth] ?? "bg-secondary"}`}
+                                >
+                                  {s.depth}
+                                </span>
+                              </td>
+                            </tr>
+                          ))}
+                        </tbody>
+                      </table>
+                    </div>
+
+                    <div className="grid gap-4 md:grid-cols-2">
+                      <div className="rounded-2xl border border-border p-4">
+                        <p className="eyebrow mb-2">Projects &amp; industry readiness</p>
+                        <ul className="space-y-1.5 text-sm text-muted-foreground">
+                          {dd.projects.map((p) => (
+                            <li key={p.label}>
+                              <strong className="text-foreground">{p.label}:</strong> {p.detail}
+                            </li>
+                          ))}
+                        </ul>
+                        <p className="mt-3 border-t border-border pt-2 text-sm leading-relaxed text-muted-foreground">
+                          {dd.industryReadiness}
+                        </p>
+                      </div>
+                      <div className="rounded-2xl border border-border p-4">
+                        <p className="eyebrow mb-2">
+                          Learning support, doubt clearing &amp; mentorship
+                        </p>
+                        <ul className="space-y-1.5 text-sm text-muted-foreground">
+                          {dd.support.map((s) => (
+                            <li key={s.label}>
+                              <strong className="text-foreground">{s.label}:</strong> {s.detail}
+                            </li>
+                          ))}
+                          <li>
+                            <strong className="text-foreground">Mentorship:</strong> {dd.mentorship}
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+
+                    <div className="rounded-2xl border border-accent/20 bg-card p-4 shadow-card">
+                      <p className="eyebrow mb-2">
+                        Placement &amp; job-assistance details (read the contract, not the banner)
+                      </p>
+                      <ul className="space-y-1.5 text-sm text-muted-foreground">
+                        {dd.placementFacts.map((p) => (
+                          <li key={p.label}>
+                            <strong className="text-foreground">{p.label}:</strong> {p.detail}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+
+                    <div className="rounded-2xl border border-border p-4">
+                      <p className="eyebrow mb-2">Learner feedback &amp; reported transitions</p>
+                      <div className="grid gap-3 sm:grid-cols-2">
+                        {dd.feedback.map((f) => (
+                          <div
+                            key={f.background + f.role}
+                            className="rounded-xl bg-paper p-3 text-sm text-muted-foreground"
+                          >
+                            <p className="text-foreground">
+                              {f.background} → <strong>{f.role}</strong>
+                            </p>
+                            <p className="mt-1">
+                              {f.company} · {f.band}
+                            </p>
+                            <p className="mt-1 text-xs text-muted-foreground/80">{f.note}</p>
+                          </div>
+                        ))}
+                      </div>
+                      {rv.rank === 1 ? (
+                        <p className="mt-3 text-sm">
+                          <a
+                            className="underline decoration-accent underline-offset-4"
+                            href="https://logicmojo.com/success-story"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            Read the full LogicMojo learner success stories ↗
+                          </a>
+                        </p>
+                      ) : null}
+                    </div>
+                  </div>
+                );
+              })()}
+
 
               <div className="mt-5 grid gap-5 md:grid-cols-2">
                 <div>
@@ -1002,6 +1178,7 @@ function Page() {
       <SectionMistakesMyths />
       <SectionPrograms />
       <SectionPathQuiz />
+      <SectionSalaryFAQs />
       <SectionFAQs />
 
       {/* FAQ */}
