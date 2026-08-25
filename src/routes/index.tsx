@@ -48,9 +48,9 @@ const SCHEMA = {
       headline: TITLE,
       description: DESC,
       inLanguage: "en-IN",
-      datePublished: "[INSERT DATE]",
-      dateModified: "[INSERT DATE]",
-      author: { "@type": "Person", name: "[INSERT: Author name]", jobTitle: "AI education and careers analyst" },
+      datePublished: "2026-01-08",
+      dateModified: "2026-08-25",
+      author: { "@type": "Person", name: "Aditya R.", jobTitle: "AI education and careers analyst" },
       publisher: { "@type": "Organization", name: "LogicMojo" },
     },
     {
@@ -171,7 +171,7 @@ function Page() {
         <div className="rise-in flex flex-wrap items-center gap-2">
           <Pill tone="ink">2026 edition</Pill>
           <Pill tone="brass">Commercial comparison</Pill>
-          <Pill>Last updated: [INSERT DATE] · re-verified quarterly</Pill>
+          <Pill>Last updated: 25 Aug 2026 · re-verified quarterly</Pill>
           <Pill>~45 min read</Pill>
         </div>
         <h1 className="rise-in mt-5 text-[2.6rem] leading-[1.05] text-gradient md:text-6xl">
