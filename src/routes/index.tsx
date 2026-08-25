@@ -2,28 +2,23 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
 import { Callout, H3, NoteCard, Pill, Reveal, Section, StatCard, TableFrame } from "@/components/site/primitives";
 import { CourseFinderQuiz } from "@/components/site/CourseFinderQuiz";
-import { SalaryQuiz } from "@/components/site/SalaryQuiz";
+import { StickyCTA } from "@/components/site/StickyCTA";
 import {
-  SectionBeyondMarketing,
-  SectionHowToChoose,
   SectionProblemSolution,
   SectionResearchMethod,
-  SectionSalaryFAQs,
 } from "@/components/site/ExperienceSolution";
+import {
+  SectionFAQsFull,
+  SectionFreeVsPaid,
+  SectionRedFlags,
+  SectionROI,
+  SectionRoles,
+  SectionVerdict,
+  faqGroups,
+} from "@/components/site/Sections9to14";
 import { deepDiveByRank } from "@/data/deepdive";
 import { AuthorByline, EvidenceStandards, FieldNote, reviewFieldNotes } from "@/components/site/EEAT";
-import {
-  SectionInternalExternal,
-  SectionJobSearch,
-  SectionMistakesMyths,
-  SectionResume,
-} from "@/components/site/CareerTransition";
-import { SectionPrograms } from "@/components/site/ProgramsHonest";
-import {
-  SectionAuthorTrust,
-  SectionFAQs,
-  SectionPathQuiz,
-} from "@/components/site/TrustBlocks";
+import { SectionAuthorTrust } from "@/components/site/TrustBlocks";
 import {
   capabilityLadder,
   COURSE_NAMES,
@@ -40,9 +35,58 @@ import {
 } from "@/data/courses";
 import { reviews } from "@/data/reviews";
 
-const TITLE = "Top 10 Best AI Courses with High Salary (2026) | Fees & ROI";
+const TITLE = "Top 10 Best AI Courses with High Salary (2026)";
 const DESC =
-  "I compared 150+ AI courses in India on fees, curriculum depth, placement support and realistic salary potential. Honest 2026 rankings, ROI math and a course finder quiz.";
+  "Compared: the 10 best AI courses for high-salary careers in 2026 — curriculum, fees, placement support, realistic salary potential and ROI, plus a course finder quiz.";
+
+
+const SCHEMA = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      headline: TITLE,
+      description: DESC,
+      inLanguage: "en-IN",
+      datePublished: "[INSERT DATE]",
+      dateModified: "[INSERT DATE]",
+      author: { "@type": "Person", name: "[INSERT: Author name]", jobTitle: "AI education and careers analyst" },
+      publisher: { "@type": "Organization", name: "LogicMojo" },
+    },
+    {
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Home", item: "/" },
+        { "@type": "ListItem", position: 2, name: "Best AI courses with high salary", item: "/best-ai-courses-with-high-salary" },
+      ],
+    },
+    {
+      "@type": "ItemList",
+      name: "Top 10 best AI courses with high salary potential (2026)",
+      itemListElement: COURSE_NAMES.map((name, i) => ({
+        "@type": "ListItem",
+        position: i + 1,
+        name,
+      })),
+    },
+    ...COURSE_NAMES.map((name) => ({
+      "@type": "Course",
+      name,
+      description: `Reviewed on this page against curriculum depth, format, fees and career support for Indian learners in 2026.`,
+      provider: { "@type": "Organization", name },
+    })),
+    {
+      "@type": "FAQPage",
+      mainEntity: faqGroups.flatMap((g) =>
+        g.items.map(([q, a]) => ({
+          "@type": "Question",
+          name: q,
+          acceptedAnswer: { "@type": "Answer", text: a },
+        })),
+      ),
+    },
+  ],
+};
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -65,21 +109,16 @@ const toc = [
   ["methodology", "How we ranked these 10 courses"],
   ["at-a-glance", "Top 10 at a glance + all six comparison tables"],
   ["logicmojo", "Why LogicMojo is ranked #1 for salary-focused learners"],
-  ["how-to-choose", "How to choose the right AI course"],
-  ["beyond-marketing", "What to look for beyond marketing"],
-  ["salary-quiz", "Salary-fit quiz — get a course recommendation"],
-  ["quiz", "AI Course Finder Quiz — find your fit"],
+  ["quiz", "AI course finder quiz — which course fits your salary goal?"],
   ["reviews", "In-depth reviews of all 10 courses"],
-  ["salary-faqs", "Salary, placement & selection FAQs"],
-  ["faq", "Frequently asked questions"],
-  ["positioning", "Résumé, LinkedIn and the career-switch narrative"],
-  ["internal-external", "Internal move vs external switch"],
-  ["job-search", "Job search and the 2026 AI interview loop"],
-  ["mistakes-myths", "Common mistakes and AI-career myths"],
-  ["programs", "10 structured programs, compared honestly"],
-  ["path-quiz", "Which path fits you? 6-question quiz"],
-  ["transition-faqs", "20 career-transition FAQs"],
-  ["author", "Author, reviewers and trust signals"],
+  ["roles", "Highest-paying AI roles in India (2026)"],
+  ["roi", "ROI reality — fees, payback and the dropout scenario"],
+  ["red-flags", "Red flags in high-salary course marketing"],
+  ["free-vs-paid", "Free vs paid AI courses — the salary lens"],
+  ["faq", "30 frequently asked questions"],
+  ["verdict", "Final verdict — the best AI course for 2026"],
+  ["author", "About the author"],
+  ["reviewers", "Expert reviewers"],
 ];
 
 const depthTone: Record<string, string> = {
@@ -114,54 +153,17 @@ function Head({ cols }: { cols: string[] }) {
   );
 }
 
-const faqs = [
-  [
-    "Which AI course gives the highest salary?",
-    "No course gives a salary — the role you can perform does. The courses that reach the highest role bands are the ones that take you to Level 4 capability: production RAG, fine-tuning, agents and MLOps with a deployed portfolio. On this list that is LogicMojo for depth, and Scaler if the binding constraint is access to product-company hiring loops.",
-  ],
-  [
-    "What salary can I expect after an AI course in India?",
-    "Expect a range attached to the role you can credibly interview for, not to the course. Entry AI/ML roles, mid AI-engineer roles and senior AI roles each carry their own bands [VERIFY: aggregator source, month/year]. Where you land inside a band depends on prior experience, city, company type, portfolio quality and negotiation.",
-  ],
-  [
-    "Is an AI course worth the fee?",
-    "It is worth it when the capability ceiling it can take you to is above the ceiling you already have, and when you will actually finish. A ₹2,00,000 program abandoned in month three is the worst outcome on this page; a ₹15,000 program finished with three deployed projects frequently beats it in an interview loop.",
-  ],
-  [
-    "Are the '₹20–40 LPA' claims on course landing pages real?",
-    "Usually they are real numbers computed in a flattering way. The three patterns to watch: a single topper CTC shown as the headline, an 'average' computed only on placement-eligible learners after filters remove most of the batch, and role-title inflation where an 'AI engineer' offer is a support role using an AI tool.",
-  ],
-  [
-    "Does an AI certification increase salary by itself?",
-    "Rarely at the offer stage. Certificates help clear HR screens, internal promotion panels and services-company documentation. Technical rounds price your portfolio and your ability to defend it.",
-  ],
-  [
-    "AI vs data science — which pays more in 2026?",
-    "Production AI and GenAI engineering roles currently price above generalist data-analysis roles because the supply of people who can deploy and monitor an LLM system is thinner [VERIFY: source, date]. The gap narrows for senior data scientists who own modelling decisions.",
-  ],
-  [
-    "How long does it take to recover the course fee?",
-    "Frame it as fee ÷ monthly in-hand delta, then add the months until you actually switch. Be honest about CTC versus in-hand: a headline CTC includes variable pay and employer contributions, so a ₹2,00,000 CTC increase is not ₹16,667 extra in your account each month.",
-  ],
-  [
-    "Can a fresher get a high salary after an online AI course?",
-    "A fresher can reach entry AI bands with a strong deployed portfolio, but competition at entry level is severe and role-title inflation is worst there. Freshers should optimise for demonstrable projects and interview reps, not for the most expensive certificate.",
-  ],
-  [
-    "Do employers verify AI certificates?",
-    "Some HR teams verify enrolment; technical interviewers largely ignore the certificate and interrogate the repository. Assume your GitHub is the document that gets read.",
-  ],
-  [
-    "Will these skills still command a premium in 18 months?",
-    "The premium moves. Prompting was a differentiator, then baseline. Production RAG and agents are heading the same way. The durable asset is engineering judgement — evaluation, deployment, monitoring and cost control — which is why MLOps weighting matters more than any single framework.",
-  ],
-];
+
 
 function Page() {
   return (
-    <main className="mx-auto max-w-4xl px-5 pb-24 md:px-8">
+    <main className="mx-auto max-w-4xl px-5 pb-28 md:px-8">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(SCHEMA) }}
+      />
       {/* SECTION 1 */}
-      <header className="relative pt-14 md:pt-20">
+      <header id="top" className="relative pt-14 md:pt-20">
         <div
           aria-hidden
           className="float-slow pointer-events-none absolute -right-24 -top-6 -z-10 hidden size-72 rounded-full bg-accent/20 blur-3xl md:block"
@@ -169,7 +171,8 @@ function Page() {
         <div className="rise-in flex flex-wrap items-center gap-2">
           <Pill tone="ink">2026 edition</Pill>
           <Pill tone="brass">Commercial comparison</Pill>
-          <Pill>Last reviewed: quarterly cadence</Pill>
+          <Pill>Last updated: [INSERT DATE] · re-verified quarterly</Pill>
+          <Pill>~45 min read</Pill>
         </div>
         <h1 className="rise-in mt-5 text-[2.6rem] leading-[1.05] text-gradient md:text-6xl">
           Top 10 Best AI Courses with High Salary (2026) — Fees, Curriculum, Placement Support,
@@ -875,34 +878,16 @@ function Page() {
         </div>
       </Section>
 
-      <SectionHowToChoose />
-      <SectionBeyondMarketing />
-
-      {/* SALARY-FIT QUIZ */}
-      <Section
-        id="salary-quiz"
-        eyebrow="Interactive · 10 questions"
-        title="Which AI Course Fits Your Salary Goal? Take the 10-Question Quiz"
-      >
-        <p>
-          Answer ten questions about your experience, background, target band, budget, placement
-          needs, learning mode, weekly hours, foundations and preferred AI career path. The result
-          opens in a pop-up with the best-fit course, why it matches, the key AI modules it covers,
-          indicative role bands and the placement-support reality — plus two runner-up shortlist
-          options. No email, and no salary is ever promised.
-        </p>
-        <SalaryQuiz />
-      </Section>
-
       {/* QUIZ */}
       <Section
         id="quiz"
-        eyebrow="Interactive"
-        title="AI Course Finder Quiz — Which Program Fits Your Money, Time and Goal?"
+        eyebrow="Section 8 · Interactive"
+        title="AI Course Finder Quiz — Which AI Course Fits Your Salary Goal?"
       >
         <p>
-          Five questions, no email required. The output is a fit suggestion based on your budget,
-          available hours and the outcome you are actually buying — never a salary projection.
+          Eight questions, no email gate, result shown inline. It matches your goal, experience,
+          budget, mode, hours, target role, expectation and placement needs to the best-fit program
+          on this list — and always names an alternative. It never projects a salary.
         </p>
         <CourseFinderQuiz />
       </Section>
@@ -1206,35 +1191,15 @@ function Page() {
         </div>
       </Reveal>
 
-      <SectionResume />
-      <SectionInternalExternal />
-      <SectionJobSearch />
-      <SectionMistakesMyths />
-      <SectionPrograms />
-      <SectionPathQuiz />
-      <SectionSalaryFAQs />
-      <SectionFAQs />
-
-      {/* FAQ */}
-
-      <Section id="faq" eyebrow="Section 8 · PAA" title="Frequently Asked Questions">
-        <div className="mt-4 space-y-4">
-          {faqs.map(([q, a]) => (
-            <details
-              key={q}
-              className="group rounded-lg border border-border bg-card p-5 shadow-card"
-            >
-              <summary className="cursor-pointer list-none font-display text-lg marker:hidden">
-                <span className="mr-2 text-brass">?</span>
-                {q}
-              </summary>
-              <p className="mt-3 leading-relaxed text-muted-foreground">{a}</p>
-            </details>
-          ))}
-        </div>
-      </Section>
+      <SectionRoles />
+      <SectionROI />
+      <SectionRedFlags />
+      <SectionFreeVsPaid />
+      <SectionFAQsFull />
+      <SectionVerdict />
 
       <SectionAuthorTrust />
+      <StickyCTA />
 
       <footer className="mt-12 rule-top text-sm leading-relaxed text-muted-foreground">
 
