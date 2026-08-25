@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
-import { Callout, H3, Pill, Section, TableFrame } from "@/components/site/primitives";
+import { Callout, H3, NoteCard, Pill, Reveal, Section, StatCard, TableFrame } from "@/components/site/primitives";
 import { CourseFinderQuiz } from "@/components/site/CourseFinderQuiz";
 import {
   capabilityLadder,
@@ -49,7 +49,7 @@ const toc = [
 const depthTone: Record<string, string> = {
   Comprehensive: "bg-positive/20 text-positive",
   Deep: "bg-positive/15 text-positive",
-  Good: "bg-brass/25 text-brass-foreground",
+  Good: "bg-accent/15 text-accent",
   Moderate: "bg-secondary text-secondary-foreground",
   Basic: "bg-caution/15 text-caution",
   Limited: "bg-caution/20 text-caution",
@@ -125,18 +125,28 @@ function Page() {
   return (
     <main className="mx-auto max-w-4xl px-5 pb-24 md:px-8">
       {/* SECTION 1 */}
-      <header className="pt-14 md:pt-20">
-        <div className="flex flex-wrap items-center gap-2">
+      <header className="relative pt-14 md:pt-20">
+        <div
+          aria-hidden
+          className="float-slow pointer-events-none absolute -right-24 -top-6 -z-10 hidden size-72 rounded-full bg-accent/20 blur-3xl md:block"
+        />
+        <div className="rise-in flex flex-wrap items-center gap-2">
           <Pill tone="ink">2026 edition</Pill>
           <Pill tone="brass">Commercial comparison</Pill>
           <Pill>Last reviewed: quarterly cadence</Pill>
         </div>
-        <h1 className="mt-5 text-[2.6rem] leading-[1.05] md:text-6xl">
+        <h1 className="rise-in mt-5 text-[2.6rem] leading-[1.05] text-gradient md:text-6xl">
           Top 10 Best AI Courses with High Salary (2026) — Fees, Curriculum, Placement Support,
           Salary Potential and ROI Compared
         </h1>
 
-        <div className="mt-8 rounded-xl border-2 border-ink bg-paper p-6 shadow-card">
+        <div className="rise-in mt-8 grid gap-4 sm:grid-cols-3">
+          <StatCard value="150+" label="Courses screened" note="Filtered down to 10 finalists" delay={0} />
+          <StatCard value="18" label="Curriculum dimensions" note="Scored per provider, GenAI to MLOps" delay={90} />
+          <StatCard value="₹0–₹3L" label="Fee spread compared" note="Capability-per-rupee, not sticker price" delay={180} />
+        </div>
+
+        <div className="glass-card card-lift rise-in mt-6 rounded-2xl p-6 md:p-7">
           <p className="eyebrow mb-2">Quick answer</p>
           <p className="leading-relaxed">
             The best AI course with high salary potential in 2026 depends on the role you're
@@ -154,13 +164,14 @@ function Page() {
           </p>
         </div>
 
-        <p className="mt-4 border-l-4 border-l-brass bg-secondary/60 px-4 py-3 text-sm leading-relaxed">
+        <p className="mt-4 rounded-r-xl border-l-4 border-l-accent bg-secondary/70 px-4 py-3 text-sm leading-relaxed">
           <strong>Disclosure:</strong> This page is published by LogicMojo, whose AI &amp; ML course
           is reviewed here and ranks #1 under the methodology stated below. Every course on this
           list — ours included — is assessed with verified claims, real limitations and the same
           scoring rubric.
         </p>
       </header>
+
 
       <div className="prose-body mt-10">
         <p>
@@ -277,27 +288,30 @@ function Page() {
       </TableFrame>
 
       {/* SECTION 2 — TOC */}
-      <nav
-        aria-label="Table of contents"
-        className="my-10 rounded-xl border border-border bg-card p-5 shadow-card"
-      >
-        <p className="eyebrow mb-3">On this page</p>
-        <ol className="grid gap-x-8 gap-y-1.5 sm:grid-cols-2">
-          {toc.map(([id, label], i) => (
-            <li key={id} className="text-sm">
-              <a
-                href={`#${id}`}
-                className="text-muted-foreground underline-offset-4 transition-colors hover:text-foreground hover:underline"
-              >
-                <span className="mr-2 font-mono text-xs text-brass">
-                  {String(i + 1).padStart(2, "0")}
-                </span>
-                {label}
-              </a>
-            </li>
-          ))}
-        </ol>
-      </nav>
+      <Reveal as="div">
+        <nav
+          aria-label="Table of contents"
+          className="glass-card card-lift my-10 rounded-2xl p-6"
+        >
+          <p className="eyebrow mb-3">On this page</p>
+          <ol className="grid gap-x-8 gap-y-1.5 sm:grid-cols-2">
+            {toc.map(([id, label], i) => (
+              <li key={id} className="text-sm">
+                <a
+                  href={`#${id}`}
+                  className="group inline-flex items-start gap-2 rounded-md px-1 py-1 text-muted-foreground transition-colors hover:bg-accent/10 hover:text-foreground"
+                >
+                  <span className="mt-0.5 font-mono text-xs text-accent transition-transform group-hover:translate-x-0.5">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  {label}
+                </a>
+              </li>
+            ))}
+          </ol>
+        </nav>
+      </Reveal>
+
 
       {/* SECTION 3 */}
       <Section
@@ -414,17 +428,22 @@ function Page() {
           column — the gap between the #1 course and the #1 course <em>for you</em> is the most
           expensive gap on this page.
         </p>
-        <ol className="my-6 space-y-2.5">
-          {ranked.map((c) => (
-            <li key={c.rank} className="flex gap-4 border-b border-border pb-2.5">
-              <span className="font-display text-2xl leading-none text-brass">{c.rank}</span>
-              <div>
-                <p className="font-semibold">{c.name}</p>
-                <p className="text-sm text-muted-foreground">{c.tag}</p>
+        <ol className="my-6 grid gap-3 sm:grid-cols-2">
+          {ranked.map((c, i) => (
+            <Reveal as="li" key={c.rank} delay={i * 45}>
+              <div className="card-lift flex h-full items-start gap-4 rounded-2xl border border-border bg-card p-4 shadow-card">
+                <span className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-[image:var(--gradient-blue)] font-display text-xl text-primary-foreground">
+                  {c.rank}
+                </span>
+                <div>
+                  <p className="font-semibold leading-tight">{c.name}</p>
+                  <p className="mt-1 text-sm text-muted-foreground">{c.tag}</p>
+                </div>
               </div>
-            </li>
+            </Reveal>
           ))}
         </ol>
+
 
         <TableFrame
           label="Table 1"
@@ -821,10 +840,10 @@ function Page() {
             <article
               key={rv.rank}
               id={`review-${rv.rank}`}
-              className="scroll-mt-24 rounded-xl border border-border bg-card p-6 shadow-card md:p-8"
+              className="card-lift scroll-mt-24 rounded-2xl border border-border bg-card p-6 shadow-card md:p-8"
             >
               <div className="flex flex-wrap items-center gap-3">
-                <span className="flex h-10 w-10 items-center justify-center rounded-full bg-ink font-display text-xl text-ink-foreground">
+                <span className="flex h-10 w-10 items-center justify-center rounded-full bg-[image:var(--gradient-blue)] font-display text-xl text-primary-foreground shadow-glow">
                   {rv.rank}
                 </span>
                 <Pill tone="brass">Ceiling: {rv.ceiling}</Pill>
@@ -900,7 +919,7 @@ function Page() {
                 </div>
               </div>
 
-              <div className="mt-6 rounded-lg bg-paper p-4">
+              <div className="mt-6 rounded-2xl border border-accent/20 bg-paper p-4">
                 <p className="eyebrow mb-3">Rating block</p>
                 <div className="grid gap-2.5">
                   {rv.ratings.map((r) => (
@@ -908,7 +927,7 @@ function Page() {
                       <span className="w-56 shrink-0 text-xs text-muted-foreground">{r.label}</span>
                       <div className="h-1.5 flex-1 rounded-full bg-secondary">
                         <div
-                          className="h-full rounded-full bg-brass"
+                          className="h-full rounded-full bg-[image:var(--gradient-blue)] transition-all duration-700"
                           style={{ width: `${r.score * 10}%` }}
                         />
                       </div>
