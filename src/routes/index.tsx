@@ -3,6 +3,18 @@ import { Button } from "@/components/ui/button";
 import { Callout, H3, NoteCard, Pill, Reveal, Section, StatCard, TableFrame } from "@/components/site/primitives";
 import { CourseFinderQuiz } from "@/components/site/CourseFinderQuiz";
 import {
+  SectionInternalExternal,
+  SectionJobSearch,
+  SectionMistakesMyths,
+  SectionResume,
+} from "@/components/site/CareerTransition";
+import { SectionPrograms } from "@/components/site/ProgramsHonest";
+import {
+  SectionAuthorTrust,
+  SectionFAQs,
+  SectionPathQuiz,
+} from "@/components/site/TrustBlocks";
+import {
   capabilityLadder,
   COURSE_NAMES,
   curriculumRows,
@@ -44,6 +56,14 @@ const toc = [
   ["quiz", "AI Course Finder Quiz — find your fit"],
   ["reviews", "In-depth reviews of all 10 courses"],
   ["faq", "Frequently asked questions"],
+  ["positioning", "Résumé, LinkedIn and the career-switch narrative"],
+  ["internal-external", "Internal move vs external switch"],
+  ["job-search", "Job search and the 2026 AI interview loop"],
+  ["mistakes-myths", "Common mistakes and AI-career myths"],
+  ["programs", "10 structured programs, compared honestly"],
+  ["path-quiz", "Which path fits you? 6-question quiz"],
+  ["transition-faqs", "20 career-transition FAQs"],
+  ["author", "Author, reviewers and trust signals"],
 ];
 
 const depthTone: Record<string, string> = {
@@ -955,7 +975,37 @@ function Page() {
         </div>
       </Section>
 
+      {/* AI community card */}
+      <Reveal>
+        <div className="card-lift glass-card my-10 rounded-3xl p-6 md:p-8">
+          <p className="eyebrow">LogicMojo AI learning community</p>
+          <h2 className="mt-2 text-2xl md:text-3xl">Learning alone is the slowest way to do this</h2>
+          <p className="mt-3 max-w-2xl leading-relaxed text-muted-foreground">
+            A peer group working through the same roadmap — weekly build check-ins, doubt support
+            when a retrieval pipeline misbehaves at 11pm IST, and people who will attack your project
+            before an interviewer does. Free to join, no schedule to keep up with.
+          </p>
+          <p className="mt-5">
+            <a
+              href="#programs"
+              className="inline-flex min-h-11 items-center rounded-full bg-[image:var(--gradient-blue)] px-6 text-sm font-medium text-primary-foreground shadow-card focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
+            >
+              Join the AI learning community → [community link placeholder]
+            </a>
+          </p>
+        </div>
+      </Reveal>
+
+      <SectionResume />
+      <SectionInternalExternal />
+      <SectionJobSearch />
+      <SectionMistakesMyths />
+      <SectionPrograms />
+      <SectionPathQuiz />
+      <SectionFAQs />
+
       {/* FAQ */}
+
       <Section id="faq" eyebrow="Section 8 · PAA" title="Frequently Asked Questions">
         <div className="mt-4 space-y-4">
           {faqs.map(([q, a]) => (
@@ -973,7 +1023,10 @@ function Page() {
         </div>
       </Section>
 
+      <SectionAuthorTrust />
+
       <footer className="mt-12 rule-top text-sm leading-relaxed text-muted-foreground">
+
         <p>
           <strong className="text-foreground">Salary and claims note.</strong> Every salary figure on
           this page is an indicative, role-based range attributed to roles and markets, never to a
