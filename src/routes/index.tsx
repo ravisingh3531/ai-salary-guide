@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
 import { Callout, H3, NoteCard, Pill, Reveal, Section, StatCard, TableFrame } from "@/components/site/primitives";
 import { CourseFinderQuiz } from "@/components/site/CourseFinderQuiz";
+import { StickyCTA } from "@/components/site/StickyCTA";
 import {
   SectionProblemSolution,
   SectionResearchMethod,
@@ -34,9 +35,9 @@ import {
 } from "@/data/courses";
 import { reviews } from "@/data/reviews";
 
-const TITLE = "Top 10 Best AI Courses with High Salary (2026) | Fees & ROI";
+const TITLE = "Top 10 Best AI Courses with High Salary (2026)";
 const DESC =
-  "I compared 150+ AI courses in India on fees, curriculum depth, placement support and realistic salary potential. Honest 2026 rankings, ROI math and a course finder quiz.";
+  "Compared: the 10 best AI courses for high-salary careers in 2026 — curriculum, fees, placement support, realistic salary potential and ROI, plus a course finder quiz.";
 
 
 const SCHEMA = {
@@ -162,7 +163,7 @@ function Page() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(SCHEMA) }}
       />
       {/* SECTION 1 */}
-      <header className="relative pt-14 md:pt-20">
+      <header id="top" className="relative pt-14 md:pt-20">
         <div
           aria-hidden
           className="float-slow pointer-events-none absolute -right-24 -top-6 -z-10 hidden size-72 rounded-full bg-accent/20 blur-3xl md:block"
@@ -1198,6 +1199,7 @@ function Page() {
       <SectionVerdict />
 
       <SectionAuthorTrust />
+      <StickyCTA />
 
       <footer className="mt-12 rule-top text-sm leading-relaxed text-muted-foreground">
 
